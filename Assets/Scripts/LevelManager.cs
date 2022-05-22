@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 
     // Private
     private Player player;
+    private Ghost ghost;
 
 
     #region Monobehaviour
@@ -29,6 +30,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start() {
         player = FindObjectOfType<Player>();
+        ghost = FindObjectOfType<Ghost>();
+        ghost.gameObject.SetActive(false);
     }
 
     #endregion
@@ -39,6 +42,9 @@ public class LevelManager : MonoBehaviour
     public void EndHumanPhase()
     {
         player.gameObject.SetActive(false);
+        ghost.transform.position = player.transform.position;
+        ghost.transform.rotation = player.transform.rotation;
+        ghost.gameObject.SetActive(true);
         Debug.Log("TODO: Level.EndHumanPhase");
     }
 
