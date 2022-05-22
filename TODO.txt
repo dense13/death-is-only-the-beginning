@@ -1,0 +1,38 @@
+[NOW]
+
+- Replace ghost model
+
+
+[SOON]
+
+> Cinemachine
+  - Setup for human phase
+  - Provisional setup for ghost phase
+
+> Ghost phase
+  - Create endless movement
+  - Implement GhostController
+  - Add Enemy
+  - Kill player
+  - Implement shooting
+  - Kill enemy
+  - Add 2nd enemy
+  - Implement waves
+
+> Powerup system
+  - Create different boxes
+  - Create correspnding powerups: single shot, double shot
+
+
+> Create Human scene
+  - ?? needs thinking.
+    · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
+    · More complex: alien infestation, requires some skill (but that's 2 games in one). MAYBE START WITH COUNT-DOWN (EASY TO IMPLEMENT), AND ONLY RETHINK IF THERE'S TIME (PROBABLY NOT ANYWAY  )
+
+
+> Add Menu Scene
+
+
+
+
+[MAYBE]
