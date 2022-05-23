@@ -1,7 +1,5 @@
 [NOW]
 
-- Replace ghost model
-
 
 [SOON]
 

@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     {
         player.gameObject.SetActive(false);
         ghost.transform.position = player.transform.position;
-        ghost.transform.rotation = player.transform.rotation;
+        //ghost.transform.rotation = player.transform.rotation;
         ghost.gameObject.SetActive(true);
         Debug.Log("TODO: Level.EndHumanPhase");
     }
