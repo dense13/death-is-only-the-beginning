@@ -309,7 +309,7 @@ MonoBehaviour:
   ascensionSpeed: 3
   forwardSpeed: 5
   enemyPrefabs:
-  - {fileID: 6467217667427517323, guid: 5667c6c63011947f4942142586548fe9, type: 3}
+  - {fileID: 560003241153046105, guid: b02676e6b63404f23b22dddcafed9d7c, type: 3}
   enemySpawnerTr: {fileID: 875676889}
   timeBetweenWaves: 3
 --- !u!1 &1718444419
@@ -455,27 +455,27 @@ PrefabInstance:
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
+        type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.9741188
       objectReference: {fileID: 0}
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.22603664
       objectReference: {fileID: 0}
     - target: {fileID: 229741160960518898, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
