@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
+    // Properties
+    public float Damage = 1f; // FUTURE: accesibility
+
+
     [Header("Cfg")]
     [SerializeField] private float speed = 20f;
 

@@ -1,11 +1,10 @@
 [NOW]
-  - Kill enemy
+- Add 2nd enemy
 
 
 [SOON]
 
 > Ghost phase
-  - Add 2nd enemy
   - Implement waves
   - Enemy movement/non overlaping!
 
@@ -19,6 +18,8 @@
     · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
     · More complex: alien infestation, requires some skill (but that's 2 games in one). MAYBE START WITH COUNT-DOWN (EASY TO IMPLEMENT), AND ONLY RETHINK IF THERE'S TIME (PROBABLY NOT ANYWAY  )
 
+> Check TODO
+
 > Create final tiles
 
 > Add Menu Scene
@@ -28,5 +29,6 @@
 
 [MAYBE]
 
+- Check FUTURE
 - Before hitting the vcamGhost, add a vcamTransition that's on a track
 - Add a better transition: some text on screen
