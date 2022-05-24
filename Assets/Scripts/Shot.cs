@@ -12,6 +12,11 @@ public class Shot : MonoBehaviour
 
     #region Monobehaviour
 
+    private void Awake() {
+        Destroy(gameObject, 10f);
+    }
+
+
     private void Update() {
         transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
     }
