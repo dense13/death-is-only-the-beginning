@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Setup")]
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private GameObject[] wavePrefabs;
     [SerializeField] private float timeBetweenWaves = 3f;
 
 
@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timeToNextWave <= 0)
         {
-            Instantiate(GetRandomEnemyPrefab(), transform.position, transform.rotation);
+            Instantiate(GetRandomWavePrefab(), transform.position, transform.rotation);
             timeToNextWave = timeBetweenWaves;
         }
         timeToNextWave -= Time.deltaTime;
@@ -35,9 +35,9 @@ public class EnemySpawner : MonoBehaviour
 
     #region Private
 
-    private GameObject GetRandomEnemyPrefab()
+    private GameObject GetRandomWavePrefab()
     {
-        return enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+        return wavePrefabs[Random.Range(0, wavePrefabs.Length)];
     }
 
     #endregion 

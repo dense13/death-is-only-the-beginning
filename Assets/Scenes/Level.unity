@@ -198,9 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a8d32562743459f86869bb16c21cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 560003241153046105, guid: b02676e6b63404f23b22dddcafed9d7c, type: 3}
-  - {fileID: 560003241153046105, guid: 75702cb0687ad471f8b1759fc76cfc7b, type: 3}
+  wavePrefabs:
+  - {fileID: 4881468198836129551, guid: 82ee47843c986449dadf82b45b2dfd64, type: 3}
+  - {fileID: 4881468198836129551, guid: d6469f360235b42088aa4d6b90d32b87, type: 3}
+  - {fileID: 4881468198836129551, guid: b433c3d31482147d29426a98352b8d62, type: 3}
   timeBetweenWaves: 3
 --- !u!1001 &1230451886
 PrefabInstance:
