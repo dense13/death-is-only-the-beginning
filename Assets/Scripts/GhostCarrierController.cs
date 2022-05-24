@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class GhostCarrierController : MonoBehaviour
 {
+    // FUTURE: SRP - the enemy spawning shouldn't be in this class
+
     [Header("Cfg")]
     [SerializeField] private float ascensionSpeed = 3f;
     [SerializeField] private float forwardSpeed = 5f;

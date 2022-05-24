@@ -1,11 +1,10 @@
 [NOW]
-- Add 2nd enemy
+  - Implement waves
 
 
 [SOON]
 
 > Ghost phase
-  - Implement waves
   - Enemy movement/non overlaping!
 
 > Powerup system

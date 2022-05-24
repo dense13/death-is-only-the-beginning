@@ -310,6 +310,7 @@ MonoBehaviour:
   forwardSpeed: 5
   enemyPrefabs:
   - {fileID: 560003241153046105, guid: b02676e6b63404f23b22dddcafed9d7c, type: 3}
+  - {fileID: 560003241153046105, guid: 75702cb0687ad471f8b1759fc76cfc7b, type: 3}
   enemySpawnerTr: {fileID: 875676889}
   timeBetweenWaves: 3
 --- !u!1 &1718444419
