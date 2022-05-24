@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Config")]
+    [Header("Cfg")]
     [SerializeField] private float speed = 5f;
 
     // Private

@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager I { get; private set; }
 
 
-    [Header("Cfg")]
+    [Header("Setup")]
     [SerializeField] private CinemachineVirtualCamera vcamHuman;
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;

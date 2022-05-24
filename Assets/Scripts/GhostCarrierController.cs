@@ -2,21 +2,29 @@ using UnityEngine;
 
 public class GhostCarrierController : MonoBehaviour
 {
-    [Header("Config")]
+    [Header("Cfg")]
     [SerializeField] private float ascensionSpeed = 3f;
     [SerializeField] private float forwardSpeed = 5f;
+
+
+    [Header("Setup")]
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private Transform enemySpawnerTr;
+    [SerializeField] private float timeBetweenWaves = 3f;
 
 
     // Private
     private Ghost ghost;
     private Vector3 ascensionPoint;
     private bool isAscensionPointSet = false;
+    private float timeToNextWave;
 
 
     #region Monobehaviour
 
     private void Awake() {
         ghost = GetComponentInChildren<Ghost>();
+        timeToNextWave = timeBetweenWaves;
     }
 
 
@@ -36,9 +44,25 @@ public class GhostCarrierController : MonoBehaviour
         }
         else
         {
+            if (timeToNextWave <= 0)
+            {
+                Instantiate(GetRandomEnemyPrefab(), enemySpawnerTr.position, enemySpawnerTr.rotation);
+                timeToNextWave = timeBetweenWaves;
+            }
             transform.position = transform.position + Vector3.forward * forwardSpeed * Time.deltaTime;
+            timeToNextWave -= Time.deltaTime;
         }
+    }
 
+    #endregion
+
+
+
+    #region Private
+
+    private GameObject GetRandomEnemyPrefab()
+    {
+        return enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
     }
 
     #endregion

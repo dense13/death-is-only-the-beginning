@@ -3,7 +3,7 @@ using UnityEngine;
 public class GhostController : MonoBehaviour
 {
 
-    [Header("Config")]
+    [Header("Cfg")]
     [SerializeField] private float initialSpeed = 6f;
 
     // Private
