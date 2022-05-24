@@ -199,9 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavePrefabs:
-  - {fileID: 4881468198836129551, guid: 82ee47843c986449dadf82b45b2dfd64, type: 3}
-  - {fileID: 4881468198836129551, guid: d6469f360235b42088aa4d6b90d32b87, type: 3}
-  - {fileID: 4881468198836129551, guid: b433c3d31482147d29426a98352b8d62, type: 3}
+  - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
   timeBetweenWaves: 3
 --- !u!1001 &1230451886
 PrefabInstance:

@@ -1,11 +1,10 @@
 [NOW]
-  - Implement waves
+
+- Enemy movement/non overlaping!
+
 
 
 [SOON]
-
-> Ghost phase
-  - Enemy movement/non overlaping!
 
 > Powerup system
   - Create different boxes
