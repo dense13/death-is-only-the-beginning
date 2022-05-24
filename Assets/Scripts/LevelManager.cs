@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour
     public void ProcessEndOfTile(GameObject tile)
     {
         Instantiate(GetRandomTilePrefab(), tile.transform.position + Vector3.forward * tileLength * 2, Quaternion.identity); // FUTURE: 2 is the number of initial tiles
-        Destroy(tile, 3f);
+        Destroy(tile, 10f);
     }
 
 

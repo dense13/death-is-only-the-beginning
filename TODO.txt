@@ -1,11 +1,10 @@
 [NOW]
-  - Implement GhostController
+  - Add Enemy
 
 
 [SOON]
 
 > Ghost phase
-  - Add Enemy
   - Kill player
   - Implement shooting
   - Kill enemy

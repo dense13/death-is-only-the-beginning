@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private float playerSpeed = 2f;
+    [SerializeField] private float speed = 5f;
 
     // Private
     private CharacterController characterController;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         Vector3 movementVector = new Vector3(horizontalInput, 0, verticalInput);
-        characterController.Move(movementVector * Time.deltaTime * playerSpeed);
+        characterController.Move(movementVector * Time.deltaTime * speed);
     }
 
     #endregion
