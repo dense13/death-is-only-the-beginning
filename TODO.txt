@@ -1,15 +1,10 @@
 [NOW]
+  - Implement GhostController
 
 
 [SOON]
 
-> Cinemachine
-  - Setup for human phase
-  - Provisional setup for ghost phase
-
 > Ghost phase
-  - Create endless movement
-  - Implement GhostController
   - Add Enemy
   - Kill player
   - Implement shooting
@@ -27,6 +22,7 @@
     · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
     · More complex: alien infestation, requires some skill (but that's 2 games in one). MAYBE START WITH COUNT-DOWN (EASY TO IMPLEMENT), AND ONLY RETHINK IF THERE'S TIME (PROBABLY NOT ANYWAY  )
 
+> Create final tiles
 
 > Add Menu Scene
 
@@ -34,3 +30,6 @@
 
 
 [MAYBE]
+
+- Before hitting the vcamGhost, add a vcamTransition that's on a track
+- Add a better transition: some text on screen

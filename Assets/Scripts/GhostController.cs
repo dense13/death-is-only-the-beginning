@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    [Header("Config")]
-    [SerializeField] private float ascensionSpeed = 3f;
+
+    // Private
+    private Ghost ghost;
 
 
     #region Monobehaviour
 
+    private void Awake() {
+        ghost = GetComponent<Ghost>();
+    }
+
+
     private void Update() {
-        // TODO: this is just placeholder code
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 10f, 0), ascensionSpeed * Time.deltaTime);
+        if (ghost.State != Ghost.GhostState.Playing) return;
+
+        // TODO: player input and movement
     }
 
     #endregion
