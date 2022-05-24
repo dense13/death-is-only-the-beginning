@@ -1,12 +1,10 @@
 [NOW]
-
-  - Implement shooting
+  - Kill enemy
 
 
 [SOON]
 
 > Ghost phase
-  - Kill enemy
   - Add 2nd enemy
   - Implement waves
   - Enemy movement/non overlaping!
