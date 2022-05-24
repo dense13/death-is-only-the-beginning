@@ -163,6 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 875676889}
+  - component: {fileID: 875676890}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -185,6 +186,22 @@ Transform:
   m_Father: {fileID: 1379010268}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &875676890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875676888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a8d32562743459f86869bb16c21cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 560003241153046105, guid: b02676e6b63404f23b22dddcafed9d7c, type: 3}
+  - {fileID: 560003241153046105, guid: 75702cb0687ad471f8b1759fc76cfc7b, type: 3}
+  timeBetweenWaves: 3
 --- !u!1001 &1230451886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,11 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ascensionSpeed: 3
   forwardSpeed: 5
-  enemyPrefabs:
-  - {fileID: 560003241153046105, guid: b02676e6b63404f23b22dddcafed9d7c, type: 3}
-  - {fileID: 560003241153046105, guid: 75702cb0687ad471f8b1759fc76cfc7b, type: 3}
-  enemySpawnerTr: {fileID: 875676889}
-  timeBetweenWaves: 3
 --- !u!1 &1718444419
 GameObject:
   m_ObjectHideFlags: 0
