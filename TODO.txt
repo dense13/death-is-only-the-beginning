@@ -1,15 +1,15 @@
 [NOW]
-  - Add Enemy
+
+  - Implement shooting
 
 
 [SOON]
 
 > Ghost phase
-  - Kill player
-  - Implement shooting
   - Kill enemy
   - Add 2nd enemy
   - Implement waves
+  - Enemy movement/non overlaping!
 
 > Powerup system
   - Create different boxes

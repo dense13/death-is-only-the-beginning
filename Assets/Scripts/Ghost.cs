@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Ghost : MonoBehaviour, IDamageable
 {
     // Enums
     public enum GhostState { Off, Transitioning, Playing }
@@ -14,6 +14,18 @@ public class Ghost : MonoBehaviour
 
     private void Awake() {
         State = GhostState.Off;
+    }
+
+    #endregion
+
+
+    #region IDamageable
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        // TODO: explode instead of just destroying
+        // TODO: show game over UI
     }
 
     #endregion
