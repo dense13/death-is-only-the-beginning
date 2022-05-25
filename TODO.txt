@@ -25,7 +25,6 @@
 
 [MAYBE]
 
-- Static elements are not really really static...
 - Check FUTURE
 - Before hitting the vcamGhost, add a vcamTransition that's on a track
 - Add a better transition: some text on screen
