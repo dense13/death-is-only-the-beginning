@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavePrefabs:
   - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
-  timeBetweenWaves: 3
+  timeBetweenWaves: 5
 --- !u!1001 &1230451886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ascensionSpeed: 3
-  forwardSpeed: 5
+  initialForwardSpeed: 5
 --- !u!54 &1379010270
 Rigidbody:
   m_ObjectHideFlags: 0

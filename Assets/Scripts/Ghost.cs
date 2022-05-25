@@ -20,20 +20,24 @@ public class Ghost : MonoBehaviour, IDamageable
 
 
     // Private
+    private GhostController ghostController;
     private float timeBetweenShots;
     private float timeToNextShot;
 
 
     #region Monobehaviour
 
-    private void Awake() {
+    private void Awake()
+    {
+        ghostController = GetComponent<GhostController>();
         State = GhostState.Off;
         timeBetweenShots = initialTimeBetweenShots;
         timeToNextShot = timeBetweenShots;
     }
 
 
-    private void Update() {
+    private void Update()
+    {
         if (State != GhostState.Playing) return;
 
         timeToNextShot -= Time.deltaTime;
@@ -44,6 +48,14 @@ public class Ghost : MonoBehaviour, IDamageable
         }
     }
 
+    #endregion
+
+
+    #region Public
+    public float GetSpeed()
+    {
+        return ghostController.GetSpeed();
+    }
     #endregion
 
 

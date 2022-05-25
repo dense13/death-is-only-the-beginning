@@ -4,7 +4,7 @@ public class GhostCarrierController : MonoBehaviour
 {
     [Header("Cfg")]
     [SerializeField] private float ascensionSpeed = 3f;
-    [SerializeField] private float forwardSpeed = 5f;
+    [SerializeField] private float initialForwardSpeed = 5f;
 
 
     // Private
@@ -12,6 +12,7 @@ public class GhostCarrierController : MonoBehaviour
     private Vector3 ascensionPoint;
     private EnemySpawner enemySpawner;
     private bool isAscensionPointSet = false;
+    private float forwardSpeed;
 
 
     #region Monobehaviour
@@ -21,6 +22,7 @@ public class GhostCarrierController : MonoBehaviour
         ghost = GetComponentInChildren<Ghost>();
         enemySpawner = GetComponentInChildren<EnemySpawner>();
         enemySpawner.enabled = false;
+        forwardSpeed = initialForwardSpeed;
     }
 
 
@@ -44,6 +46,16 @@ public class GhostCarrierController : MonoBehaviour
             enemySpawner.enabled = true;
             transform.position = transform.position + Vector3.forward * forwardSpeed * Time.deltaTime;
         }
+    }
+
+    #endregion
+
+
+    #region Public
+
+    public float GetForwardSpeed()
+    {
+        return forwardSpeed;
     }
 
     #endregion

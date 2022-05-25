@@ -13,13 +13,15 @@ public class GhostController : MonoBehaviour
 
     #region Monobehaviour
 
-    private void Awake() {
+    private void Awake()
+    {
         ghost = GetComponent<Ghost>();
         speed = initialSpeed;
     }
 
 
-    private void Update() {
+    private void Update()
+    {
         if (ghost.State != Ghost.GhostState.Playing) return;
 
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -33,6 +35,16 @@ public class GhostController : MonoBehaviour
         // FUTURE: the movement cropping is not resolution independent
 
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, speed * Time.deltaTime);
+    }
+
+    #endregion
+
+
+    #region Public
+    
+    public float GetSpeed()
+    {
+        return speed;
     }
 
     #endregion
