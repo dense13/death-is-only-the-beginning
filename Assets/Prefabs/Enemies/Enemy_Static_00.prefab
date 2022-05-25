@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 6467217667427517323, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_0
+      value: Enemy_Static_00
       objectReference: {fileID: 0}
     - target: {fileID: 8644160828058736279, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
@@ -167,6 +167,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.77
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8472613917707079947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560003241153046105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e503e1d6858344adcb32e2c99bd42729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6068327525100316642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 734839306376380976, guid: 5667c6c63011947f4942142586548fe9,

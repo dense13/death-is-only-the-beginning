@@ -23,8 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timeToNextWave <= 0)
         {
-            Instantiate(GetRandomWavePrefab(), transform.position, transform.rotation, this.transform);
-            
+            Instantiate(GetRandomWavePrefab(), transform.position, transform.rotation, transform);
             timeToNextWave = timeBetweenWaves;
         }
         timeToNextWave -= Time.deltaTime;
