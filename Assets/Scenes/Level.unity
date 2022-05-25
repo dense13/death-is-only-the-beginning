@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wavePrefabs:
   - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
-  timeBetweenWaves: 5
+  timeBetweenWaves: 3
 --- !u!1001 &1230451886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,6 +471,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175008502, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 175008503, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_Follow
       value: 
@@ -479,6 +483,10 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 1379010268}
+    - target: {fileID: 175008503, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 175008504, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_LocalPosition.y
       value: 65

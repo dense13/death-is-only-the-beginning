@@ -3,23 +3,27 @@ using UnityEngine;
 public class EnemyMovementVertical : MonoBehaviour
 {
     [Header("Cfg")]
-    [SerializeField][Tooltip("-1 means static")] private float speed = -1;
+    [SerializeField] private float speed = 0;
+
+
+    // Private
+    private Rigidbody rb;
 
 
     #region Monobehaviour
     
-    private void Start()
+    private void Awake()
     {
-        if (speed < 0)
-        {
-            speed = FindObjectOfType<GhostCarrierController>().GetForwardSpeed(); // this makes it appear 'static', as if glued to the tiles
-        }
+        rb = GetComponent<Rigidbody>();    
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        transform.position = transform.position + Vector3.back * speed * Time.deltaTime;
+        if (speed == 0) return;
+        
+        Vector3 newPosition = Vector3.MoveTowards(transform.position, transform.position + Vector3.back, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newPosition);
     }
 
     #endregion

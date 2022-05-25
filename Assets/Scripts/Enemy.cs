@@ -18,9 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Ghost ghost))
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.TryGetComponent(out Ghost ghost))
         {
             if (hasExploded) return;
 
@@ -29,7 +28,7 @@ public class Enemy : MonoBehaviour, IDamageable
             Destroy(gameObject);
             hasExploded = true;
         }
-        else if (other.TryGetComponent(out Shot shot))
+        else if (other.gameObject.TryGetComponent(out Shot shot))
         {
             health.TakeDamage(shot.Damage);
             Destroy(shot.gameObject);
