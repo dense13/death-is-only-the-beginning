@@ -41,10 +41,10 @@ public class GhostController : MonoBehaviour
 
 
     #region Public
-    
-    public float GetSpeed()
+
+    public void UpgradeSpeed()
     {
-        return speed;
+        speed += 1f; // FUTURE: adjust, and limit this
     }
 
     #endregion

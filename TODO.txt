@@ -1,12 +1,26 @@
 [NOW]
 
+- Add scoring system
+
 
 
 [SOON]
 
+> Add HUD
+  - Score
+  - Life
+
 > Powerup system
-  - Create different boxes
-  - Create correspnding powerups: single shot, double shot
+  - Add mega bomb
+  - Add multi-shot
+  - Limit level of each thing, after that just get points
+
+- Add shooting enemies
+
+> Add difficulty increase
+  - Waves spawn more often
+  - Enemies become tougher
+  - New waves are added every now and then
 
 
 > Create Human scene
@@ -25,6 +39,7 @@
 
 [MAYBE]
 
+- Show on screen what the power up did (or at least when it gives you money instead, or maybe have the icons in the UI, with the different levels indicated)
 - Check FUTURE
 - Before hitting the vcamGhost, add a vcamTransition that's on a track
 - Add a better transition: some text on screen

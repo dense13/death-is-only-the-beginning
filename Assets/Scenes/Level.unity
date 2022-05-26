@@ -154,6 +154,54 @@ Transform:
   m_Father: {fileID: 9201950593097335888}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &633575230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633575232}
+  - component: {fileID: 633575231}
+  m_Layer: 0
+  m_Name: PowerupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &633575231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633575230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407307aac34364ad898ac8d427babaff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 7589013046955373853, guid: 09fb7dc0937a4432b8086e2a26b59c39, type: 3}
+  - {fileID: 7589013046955373853, guid: 078c4bd5ab0d84f208b3eb5977f840cf, type: 3}
+  timeBetweenSpawns: 5
+--- !u!4 &633575232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633575230}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1379010268}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &875676888
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,12 +243,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 875676888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17a8d32562743459f86869bb16c21cf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 407307aac34364ad898ac8d427babaff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavePrefabs:
+  prefabs:
   - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
-  timeBetweenWaves: 3
+  timeBetweenSpawns: 3
 --- !u!1001 &1230451886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,6 +357,7 @@ Transform:
   m_Children:
   - {fileID: 9201950593097335888}
   - {fileID: 875676889}
+  - {fileID: 633575232}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -326,6 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ascensionSpeed: 3
   initialForwardSpeed: 5
+  enemySpawner: {fileID: 875676890}
+  powerupSpawner: {fileID: 633575231}
 --- !u!54 &1379010270
 Rigidbody:
   m_ObjectHideFlags: 0

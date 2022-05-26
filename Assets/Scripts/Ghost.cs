@@ -52,10 +52,18 @@ public class Ghost : MonoBehaviour, IDamageable
 
 
     #region Public
-    public float GetSpeed()
+
+    public void UpgradeSpeed()
     {
-        return ghostController.GetSpeed();
+        ghostController.UpgradeSpeed();
     }
+
+
+    public void UpgradeShootingSpeed()
+    {
+        timeBetweenShots *= .9f; // FUTURE: adjust and limit this
+    }
+
     #endregion
 
 
