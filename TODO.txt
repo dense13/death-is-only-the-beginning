@@ -1,14 +1,9 @@
 [NOW]
 
-- Add scoring system
-
+- Add game over panel
 
 
 [SOON]
-
-> Add HUD
-  - Score
-  - Life
 
 > Powerup system
   - Add mega bomb

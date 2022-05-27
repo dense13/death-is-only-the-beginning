@@ -42,6 +42,13 @@ public class LevelManager : MonoBehaviour
         ghost.gameObject.SetActive(false);
         vcamHuman.gameObject.SetActive(true);
         vcamGhost.gameObject.SetActive(false);
+
+        ghost.GetComponent<Health>().OnDamageTaken += ProcessOnDamageTaken;
+    }
+
+
+    private void OnDestroy() {
+        ghost.GetComponent<Health>().OnDamageTaken -= ProcessOnDamageTaken;        
     }
 
     #endregion
@@ -66,6 +73,12 @@ public class LevelManager : MonoBehaviour
     {
         score += amount;
         uiHud.UpdateScore(score);
+    }
+
+
+    public void UpdateHealth(float currHealth, float totalHealth)
+    {
+        uiHud.UpdateHealth(currHealth, totalHealth);
     }
 
     #endregion
@@ -119,6 +132,16 @@ public class LevelManager : MonoBehaviour
         // Start Ghost phase
         uiHud.gameObject.SetActive(true); // FUTURE: fade in
         ghost.State = Ghost.GhostState.Playing;
+    }
+
+    #endregion
+
+
+    #region Action handlers
+    
+    private void ProcessOnDamageTaken(float damage, float currHealth, float totalHealth)
+    {
+        uiHud.UpdateHealth(currHealth, totalHealth);
     }
 
     #endregion

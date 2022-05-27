@@ -1,7 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    // Actions
+    public event Action<float, float, float> OnDamageTaken;
+
+
     [Header("Cfg")]
     [SerializeField] private float initialHealth = 10f;
 
@@ -33,6 +38,8 @@ public class Health : MonoBehaviour
         if (health == 0) return;
 
         health -= damage;
+        OnDamageTaken?.Invoke(damage, health, initialHealth);
+        
         if (health <= 0)
         {
             health = 0;

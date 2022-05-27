@@ -508,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtScore: {fileID: 1208083463}
+  imgCurrHealth: {fileID: 1197415617}
 --- !u!1 &1197415615
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +521,7 @@ GameObject:
   - component: {fileID: 1197415618}
   - component: {fileID: 1197415617}
   m_Layer: 5
-  m_Name: Image
+  m_Name: imgCurrHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
