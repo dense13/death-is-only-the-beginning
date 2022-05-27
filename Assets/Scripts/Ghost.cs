@@ -56,21 +56,25 @@ public class Ghost : MonoBehaviour, IDamageable
 
     #region Public
 
-    public void UpgradeSpeed()
+    public bool UpgradeSpeed()
     {
-        ghostController.UpgradeSpeed();
+        return ghostController.UpgradeSpeed();
     }
 
 
-    public void UpgradeShootingSpeed()
+    public bool UpgradeShootingSpeed()
     {
-        timeBetweenShots *= .9f; // FUTURE: adjust and limit this
+        // Returns false if time has reach a low threshold
+        if (timeBetweenShots <= 0.1f) return false;
+
+        timeBetweenShots -= 0.1f;
+        return true;
     }
 
 
-    public void Heal()
+    public bool Heal()
     {
-        health.Heal(1f);
+        return health.Heal(1f);
     }
 
 

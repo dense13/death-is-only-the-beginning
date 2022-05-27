@@ -4,34 +4,81 @@
 
 [SOON]
 
-> Powerup system
-  - Limit level of each thing, after that just get points
-
 - Add shooting enemies
+- Add shooting permanent enemies (not in Wave - you have to kill them! -, always staying at a distance from player)
 
 > Add difficulty increase
-  - Waves spawn more often
-  - Enemies become tougher
-  - New waves are added every now and then
+  - Create different wave 'sets'. The last one should be really hard and eventually kill you
 
+> Create one proper tile
 
 > Create Human scene
-  - ?? needs thinking.
-    · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
-    · More complex: alien infestation, requires some skill (but that's 2 games in one). MAYBE START WITH COUNT-DOWN (EASY TO IMPLEMENT), AND ONLY RETHINK IF THERE'S TIME (PROBABLY NOT ANYWAY  )
+ · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
 
-> Check TODO
+- Add Menu Scene
 
-> Create final tiles
+- Add bye bye screen
 
-> Add Menu Scene
+- Check TODO
+
+
+
+[DRESS-IT-UP]
+
+- Add some background music
+- Add some skydome
+
+- Shot SFX
+- Enemy explosions
+- Enemy hurt SFX
+- Enemy explosion SFX
+
+- Ghost hurt SFX
+- Ghost death VFX
+- Ghost death SFX
+
+- Powerup pickup VFX
+- Powerup pickup SFX
+
+- Box pickup VFX
+- Box pickup SFX
+
+- EndHumanPhase mega explosion
+
+> Improve transition cinematic
+  - Before hitting the vcamGhost, add a vcamTransition that's on a track
+  - Add text messages
+  - Some Bg music?
+
+
+
+[PUBLISH]
+
+- Make icon
+- Make cover image
+- Take screenshots
+- Write page content
+- Publish in itch.io
+- Submit to Jam
+-----
+- Write/Publish post in dense13.com
+- Write/Publish long (LinkedIn)
+- Write/Publish short (Twitter, FB)
+- Write in MGC
+- Write to James/Glenn, Bill, Albert
+
 
 
 
 
 [MAYBE]
-
+- Find a good font
+- Invulnerable Powerup
+- Compose original music
+- Play with light levels? Day/night cycle?
+- Video for publishing?
+- Maybe, a bit of invulnerability after getting hit?
+- Ghost hurt animation
+- Create more tiles
 - Show on screen what the power up did (or at least when it gives you money instead, or maybe have the icons in the UI, with the different levels indicated)
 - Check FUTURE
-- Before hitting the vcamGhost, add a vcamTransition that's on a track
-- Add a better transition: some text on screen

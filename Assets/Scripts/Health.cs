@@ -48,11 +48,15 @@ public class Health : MonoBehaviour
     }
 
 
-    public void Heal(float amount)
+    public bool Heal(float amount)
     {
+        // Returns false if health was already at max
+        if (health == initialHealth) return false;
+
         health += amount;
         if (health > initialHealth) health = initialHealth;
         OnHealthChange?.Invoke(health, initialHealth);
+        return true;
     }
 
 

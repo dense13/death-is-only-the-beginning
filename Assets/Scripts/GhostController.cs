@@ -42,9 +42,13 @@ public class GhostController : MonoBehaviour
 
     #region Public
 
-    public void UpgradeSpeed()
+    public bool UpgradeSpeed()
     {
-        speed += 1f; // FUTURE: adjust, and limit this
+        // Returns false if speed has reached a top threshold
+        if (speed >= 10f) return false;
+
+        speed += 1f;
+        return true;
     }
 
     #endregion

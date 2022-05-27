@@ -4,6 +4,8 @@ public class Powerup : MonoBehaviour
 {
     private enum PowerupType { Speed, ShootingSpeed, Health, Bomb }
 
+    private const int SCORE_FOR_UNUSABLE_POWERUP = 10;
+
     [Header("Cfg")]
     [SerializeField] private PowerupType type = PowerupType.Speed;
 
@@ -23,13 +25,13 @@ public class Powerup : MonoBehaviour
             switch (type)
             {
                 case PowerupType.Speed:
-                    ghost.UpgradeSpeed();
+                    if (!ghost.UpgradeSpeed()) UnusablePowerup();
                     break;
                 case PowerupType.ShootingSpeed:
-                    ghost.UpgradeShootingSpeed();
+                    if (!ghost.UpgradeShootingSpeed()) UnusablePowerup();
                     break;
                 case PowerupType.Health:
-                    ghost.Heal();
+                    if (!ghost.Heal()) UnusablePowerup();
                     break;
                 case PowerupType.Bomb:
                     ghost.TriggerExplosion();
@@ -43,6 +45,15 @@ public class Powerup : MonoBehaviour
         }
     }
 
+    #endregion
+
+
+    #region Private
+    
+    private void UnusablePowerup()
+    {
+        LevelManager.I.AddScore(SCORE_FOR_UNUSABLE_POWERUP); // FUTURE: show some visual and/or aural feed back
+    }
     #endregion
 
 }
