@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    private enum PowerupType { Speed, ShootingSpeed, Health }
+    private enum PowerupType { Speed, ShootingSpeed, Health, Bomb }
 
     [Header("Cfg")]
     [SerializeField] private PowerupType type = PowerupType.Speed;
@@ -30,6 +30,9 @@ public class Powerup : MonoBehaviour
                     break;
                 case PowerupType.Health:
                     ghost.Heal();
+                    break;
+                case PowerupType.Bomb:
+                    ghost.TriggerExplosion();
                     break;
                 default:
                     Debug.LogError("OOPS! Unrecognized powerup type " + type);

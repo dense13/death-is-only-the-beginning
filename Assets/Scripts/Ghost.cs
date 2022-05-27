@@ -70,7 +70,19 @@ public class Ghost : MonoBehaviour, IDamageable
 
     public void Heal()
     {
-        health.Heal(2);
+        health.Heal(1f);
+    }
+
+
+    public void TriggerExplosion()
+    {
+        // FUTURE: this shouldn't be in Ghost, and probably not use FindObjectsOfType, but for the Game Jam that'll do. :)
+        // FUTURE: do it only over a certain radious?
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        foreach (var enemy in enemies)
+        {
+            enemy.Die();
+        }
     }
 
     #endregion

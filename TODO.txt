@@ -1,11 +1,10 @@
 [NOW]
-- Add mega bomb
+  - Add multi-shot
 
 
 [SOON]
 
 > Powerup system
-  - Add multi-shot
   - Limit level of each thing, after that just get points
 
 - Add shooting enemies
