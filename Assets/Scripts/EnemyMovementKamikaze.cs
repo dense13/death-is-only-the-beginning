@@ -5,6 +5,7 @@ public class EnemyMovementKamikaze : MonoBehaviour
     [Header("Cfg")]
     [SerializeField] private float verticalSpeed = 5f;
     [SerializeField] private float horizontalSpeed = 5f;
+    [SerializeField] private float movementDelay = 1f;
 
 
     // Private
@@ -32,6 +33,12 @@ public class EnemyMovementKamikaze : MonoBehaviour
         if (ghost == null)
         {
             enabled = false;
+            return;
+        }
+
+        if (movementDelay > 0)
+        {
+            movementDelay -= Time.deltaTime;
             return;
         }
 

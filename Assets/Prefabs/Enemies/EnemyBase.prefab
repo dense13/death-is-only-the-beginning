@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 5
+  scoreValue: 1
 --- !u!114 &6371374876245155255
 MonoBehaviour:
   m_ObjectHideFlags: 0

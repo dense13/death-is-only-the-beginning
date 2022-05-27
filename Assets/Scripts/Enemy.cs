@@ -4,9 +4,10 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Cfg")]
     [SerializeField] private float collisionDamage = 5f;
+    [SerializeField] private int scoreValue = 1;
 
     // Private
-    private bool hasExploded = false;
+    private bool isDead = false;
     private Health health;
     
     
@@ -19,19 +20,20 @@ public class Enemy : MonoBehaviour, IDamageable
 
 
     private void OnCollisionEnter(Collision other) {
+        if (isDead) return;
+        
+        // Ghost
         if (other.gameObject.TryGetComponent(out Ghost ghost))
         {
-            if (hasExploded) return;
 
             ghost.GetComponent<Health>().TakeDamage(collisionDamage);
-            // TODO: explode instead of just destroying
-            Destroy(gameObject);
-            hasExploded = true;
+            Die();
         }
+        // Shot
         else if (other.gameObject.TryGetComponent(out Shot shot))
         {
-            health.TakeDamage(shot.Damage);
             Destroy(shot.gameObject);
+            health.TakeDamage(shot.Damage);
         }
     }
 
@@ -42,6 +44,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        // TODO: explode instead of just destroying
+        isDead = true;
+        LevelManager.I.AddScore(scoreValue);
         Destroy(gameObject);
         // TODO: explode instead of just destroying
     }

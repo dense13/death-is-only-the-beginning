@@ -18,7 +18,9 @@ public class LevelManager : MonoBehaviour
     private Player player;
     private Ghost ghost;
     private Transform ghostCarrierTr;
+    private UIHud uiHud;
     private float tileLength = 40f; // FUTURE: this shouldn't be a magic number
+    private int score = 0;
 
 
     #region Monobehaviour
@@ -33,6 +35,8 @@ public class LevelManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         ghost = FindObjectOfType<Ghost>();
         ghostCarrierTr = ghost.transform.parent.transform;
+        uiHud = FindObjectOfType<UIHud>();
+        uiHud.gameObject.SetActive(false);
 
         player.gameObject.SetActive(true);
         ghost.gameObject.SetActive(false);
@@ -55,6 +59,13 @@ public class LevelManager : MonoBehaviour
     public void EndHumanPhase()
     {
         StartCoroutine(__EndHumanPhase());
+    }
+
+
+    public void AddScore(int amount)
+    {
+        score += amount;
+        uiHud.UpdateScore(score);
     }
 
     #endregion
@@ -106,6 +117,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(4f); // FUTURE: this is the length of the vcam transitions
 
         // Start Ghost phase
+        uiHud.gameObject.SetActive(true); // FUTURE: fade in
         ghost.State = Ghost.GhostState.Playing;
     }
 
