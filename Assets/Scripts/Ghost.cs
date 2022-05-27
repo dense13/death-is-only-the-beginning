@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ghost : MonoBehaviour, IDamageable
 {
     // Enums
-    public enum GhostState { Off, Transitioning, Playing }
+    public enum GhostState { Off, Transitioning, Playing, Dead }
 
 
     // Properties
@@ -17,6 +17,7 @@ public class Ghost : MonoBehaviour, IDamageable
     [Header("Setup")]
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
+    [SerializeField] private GameObject modelGO;
 
 
     // Private
@@ -71,9 +72,12 @@ public class Ghost : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        Destroy(gameObject);
-        // TODO: explode instead of just destroying
-        // TODO: show game over UI
+        ghostController.enabled = false;
+        modelGO.SetActive(false);
+        enabled = false;
+        State = GhostState.Dead;
+        // TODO: explode instead of just hiding
+        LevelManager.I.EndGhostPhase();
     }
 
     #endregion

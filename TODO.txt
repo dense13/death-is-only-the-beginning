@@ -1,6 +1,6 @@
 [NOW]
+- Add health powerup
 
-- Add game over panel
 
 
 [SOON]

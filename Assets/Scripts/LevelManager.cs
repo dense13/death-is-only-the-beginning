@@ -12,16 +12,17 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcamHuman;
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;
+    [SerializeField] private UIEndPanel uiEndPanel;
 
 
     // Private
     private Player player;
     private Ghost ghost;
+    private Health ghostHealth;
     private Transform ghostCarrierTr;
     private UIHud uiHud;
     private float tileLength = 40f; // FUTURE: this shouldn't be a magic number
     private int score = 0;
-
 
     #region Monobehaviour
 
@@ -34,6 +35,7 @@ public class LevelManager : MonoBehaviour
     private void Start() {
         player = FindObjectOfType<Player>();
         ghost = FindObjectOfType<Ghost>();
+        ghostHealth = ghost.GetComponent<Health>();
         ghostCarrierTr = ghost.transform.parent.transform;
         uiHud = FindObjectOfType<UIHud>();
         uiHud.gameObject.SetActive(false);
@@ -42,13 +44,14 @@ public class LevelManager : MonoBehaviour
         ghost.gameObject.SetActive(false);
         vcamHuman.gameObject.SetActive(true);
         vcamGhost.gameObject.SetActive(false);
+        uiEndPanel.gameObject.SetActive(false);
 
-        ghost.GetComponent<Health>().OnDamageTaken += ProcessOnDamageTaken;
+        ghostHealth.OnDamageTaken += ProcessOnDamageTaken;
     }
 
 
     private void OnDestroy() {
-        ghost.GetComponent<Health>().OnDamageTaken -= ProcessOnDamageTaken;        
+        ghostHealth.OnDamageTaken -= ProcessOnDamageTaken;        
     }
 
     #endregion
@@ -69,8 +72,21 @@ public class LevelManager : MonoBehaviour
     }
 
 
+    public void EndGhostPhase()
+    {
+        if (score > GameManager.I.TopScore)
+        {
+            GameManager.I.TopScore = score;
+            uiEndPanel.ShowNewTopScore(); 
+        }
+        uiEndPanel.gameObject.SetActive(true);
+    }
+
+
     public void AddScore(int amount)
     {
+        if (ghost.State != Ghost.GhostState.Playing) return;
+
         score += amount;
         uiHud.UpdateScore(score);
     }
