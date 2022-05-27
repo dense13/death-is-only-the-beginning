@@ -186,6 +186,7 @@ MonoBehaviour:
   prefabs:
   - {fileID: 7589013046955373853, guid: 09fb7dc0937a4432b8086e2a26b59c39, type: 3}
   - {fileID: 7589013046955373853, guid: 078c4bd5ab0d84f208b3eb5977f840cf, type: 3}
+  - {fileID: 7589013046955373853, guid: 8157ce4f7905f46a5bbe1636b7d05793, type: 3}
   timeBetweenSpawns: 5
 --- !u!4 &633575232
 Transform:
@@ -1470,6 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialTimeBetweenShots: 1
+  health: {fileID: 0}
   shotPrefab: {fileID: 6023868530603265048, guid: 0ed1d5eb5d6124249bf018962a77af4b,
     type: 3}
   shotPosition: {fileID: 312811600}

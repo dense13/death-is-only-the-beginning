@@ -15,6 +15,7 @@ public class Ghost : MonoBehaviour, IDamageable
 
 
     [Header("Setup")]
+    [SerializeField] private Health health;
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
     [SerializeField] private GameObject modelGO;
@@ -31,6 +32,7 @@ public class Ghost : MonoBehaviour, IDamageable
     private void Awake()
     {
         ghostController = GetComponent<GhostController>();
+        health = GetComponent<Health>();
         State = GhostState.Off;
         timeBetweenShots = initialTimeBetweenShots;
         timeToNextShot = timeBetweenShots;
@@ -63,6 +65,12 @@ public class Ghost : MonoBehaviour, IDamageable
     public void UpgradeShootingSpeed()
     {
         timeBetweenShots *= .9f; // FUTURE: adjust and limit this
+    }
+
+
+    public void Heal()
+    {
+        health.Heal(2);
     }
 
     #endregion

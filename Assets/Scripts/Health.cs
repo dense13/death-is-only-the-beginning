@@ -4,7 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     // Actions
-    public event Action<float, float, float> OnDamageTaken;
+    public event Action<float, float> OnHealthChange;
 
 
     [Header("Cfg")]
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
         if (health == 0) return;
 
         health -= damage;
-        OnDamageTaken?.Invoke(damage, health, initialHealth);
+        OnHealthChange?.Invoke(health, initialHealth);
         
         if (health <= 0)
         {
@@ -46,6 +46,15 @@ public class Health : MonoBehaviour
             owner.Die();
         }
     }
+
+
+    public void Heal(float amount)
+    {
+        health += amount;
+        if (health > initialHealth) health = initialHealth;
+        OnHealthChange?.Invoke(health, initialHealth);
+    }
+
 
     #endregion
 }

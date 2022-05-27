@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eff87de281d62459c84f28a055939160, type: 2}
+  - {fileID: 2100000, guid: a2821f764fcde4e5b8bd9234a0b6533f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,12 +93,12 @@ PrefabInstance:
     - target: {fileID: 2291314148055785898, guid: fd938333d6cb84df2981a6c0a991a29c,
         type: 3}
       propertyPath: type
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5843107236094274949, guid: fd938333d6cb84df2981a6c0a991a29c,
         type: 3}
       propertyPath: m_Name
-      value: PowerupShootingSpeed
+      value: PowerupHealth
       objectReference: {fileID: 0}
     - target: {fileID: 6114636802669416518, guid: fd938333d6cb84df2981a6c0a991a29c,
         type: 3}

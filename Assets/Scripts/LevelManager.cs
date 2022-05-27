@@ -46,12 +46,12 @@ public class LevelManager : MonoBehaviour
         vcamGhost.gameObject.SetActive(false);
         uiEndPanel.gameObject.SetActive(false);
 
-        ghostHealth.OnDamageTaken += ProcessOnDamageTaken;
+        ghostHealth.OnHealthChange += ProcessOnHealthChange;
     }
 
 
     private void OnDestroy() {
-        ghostHealth.OnDamageTaken -= ProcessOnDamageTaken;        
+        ghostHealth.OnHealthChange -= ProcessOnHealthChange;        
     }
 
     #endregion
@@ -155,7 +155,7 @@ public class LevelManager : MonoBehaviour
 
     #region Action handlers
     
-    private void ProcessOnDamageTaken(float damage, float currHealth, float totalHealth)
+    private void ProcessOnHealthChange(float currHealth, float totalHealth)
     {
         uiHud.UpdateHealth(currHealth, totalHealth);
     }
