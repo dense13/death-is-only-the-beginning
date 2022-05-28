@@ -307,7 +307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &504836492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 951155208}
   - component: {fileID: 951155211}
   - component: {fileID: 229741160849965127}
+  - component: {fileID: 802816457045353936}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -1074,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 65, z: 0}
+  m_FollowOffset: {x: 0, y: 25, z: -40}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -1083,6 +1084,18 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &802816457045353936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951155207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1128344408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,7 +1629,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1.75
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1625,7 +1638,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.7
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1659,7 +1672,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 6048
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -1889,6 +1902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5dbae5f4cd04b20a4fee228495fa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageLength: 20
   vcamHuman: {fileID: 703475959}
   vcamGhost: {fileID: 175008503}
   tilePrefabs:
@@ -1958,7 +1972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1531126566543564398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2266,7 +2280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5152321153194138865
 RectTransform:
   m_ObjectHideFlags: 0
