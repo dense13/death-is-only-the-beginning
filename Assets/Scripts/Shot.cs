@@ -38,7 +38,10 @@ public class Shot : MonoBehaviour
         {
             if (isEnemyShot)
             {
-                target = FindObjectOfType<Ghost>().transform;
+                Ghost ghost = FindObjectOfType<Ghost>();
+                if (ghost == null) return;
+                
+                target = ghost.transform;
             }
         }
     }
@@ -64,6 +67,17 @@ public class Shot : MonoBehaviour
             transform.position = transform.position + transform.forward * speed * Time.deltaTime;
         }
     }
+
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("StopsBullets"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
 
     #endregion
 

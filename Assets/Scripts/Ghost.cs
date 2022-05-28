@@ -18,7 +18,6 @@ public class Ghost : MonoBehaviour, IDamageable
     [SerializeField] private Health health;
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
-    [SerializeField] private GameObject modelGO;
 
 
     // Private
@@ -119,8 +118,7 @@ public class Ghost : MonoBehaviour, IDamageable
     public void Die()
     {
         ghostController.enabled = false;
-        modelGO.SetActive(false);
-        enabled = false;
+        gameObject.SetActive(false);
         State = GhostState.Dead;
         // TODO: explode instead of just hiding
         LevelManager.I.EndGhostPhase();

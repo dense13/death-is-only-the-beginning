@@ -11,11 +11,22 @@ public class UIEndPanel : MonoBehaviour
     [SerializeField] private TMP_Text txtNewTopScore;
 
 
-    private void Awake() {
+    #region Monobehaviour
+
+    private void Awake()
+    {
         panelTopScoreGO.SetActive(true);
         panelNewTopScoreGO.SetActive(false);
+    }
+
+
+    private void Start()
+    {
         txtTopScore.text = "" + GameManager.I.TopScore;
     }
+
+    #endregion
+
 
 
     public void ShowNewTopScore()
