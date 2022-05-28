@@ -8,11 +8,19 @@ public class LevelManager : MonoBehaviour
     public static LevelManager I { get; private set; }
 
 
+    [Header("Config")]
+    [SerializeField][Tooltip("In seconds")] private float stageLength = 10f;
+    
+    
     [Header("Setup")]
     [SerializeField] private CinemachineVirtualCamera vcamHuman;
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;
     [SerializeField] private UIEndPanel uiEndPanel;
+
+
+    // Properties
+    public int Stage { get { return stage; } }
 
 
     // Private
@@ -23,16 +31,20 @@ public class LevelManager : MonoBehaviour
     private UIHud uiHud;
     private float tileLength = 40f; // FUTURE: this shouldn't be a magic number
     private int score = 0;
+    private int stage = 0;
+    private float timeToNextStage;
 
     #region Monobehaviour
 
     private void Awake()
     {
         SetupSingleton();
+        timeToNextStage = stageLength;
     }
 
 
-    private void Start() {
+    private void Start()
+    {
         player = FindObjectOfType<Player>();
         ghost = FindObjectOfType<Ghost>();
         ghostHealth = ghost.GetComponent<Health>();
@@ -50,7 +62,19 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    private void OnDestroy() {
+    private void Update()
+    {
+        if (timeToNextStage <= 0)
+        {
+            stage++;
+            timeToNextStage = stageLength;
+        }
+        timeToNextStage -= Time.deltaTime;
+    }
+
+
+    private void OnDestroy()
+    {
         ghostHealth.OnHealthChange -= ProcessOnHealthChange;        
     }
 

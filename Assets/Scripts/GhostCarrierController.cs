@@ -8,7 +8,7 @@ public class GhostCarrierController : MonoBehaviour
 
 
     [Header("Setup")]
-    [SerializeField] private AssetSpawner enemySpawner;
+    [SerializeField] private WaveSpawner waveSpawner;
     [SerializeField] private AssetSpawner powerupSpawner;
 
 
@@ -24,7 +24,7 @@ public class GhostCarrierController : MonoBehaviour
     private void Awake()
     {
         ghost = GetComponentInChildren<Ghost>();
-        enemySpawner.enabled = false;
+        waveSpawner.enabled = false;
         powerupSpawner.enabled = false;
         forwardSpeed = initialForwardSpeed;
     }
@@ -47,7 +47,7 @@ public class GhostCarrierController : MonoBehaviour
         }
         else
         {
-            enemySpawner.enabled = true;
+            waveSpawner.enabled = true;
             powerupSpawner.enabled = true;
             transform.position = transform.position + Vector3.forward * forwardSpeed * Time.deltaTime;
         }

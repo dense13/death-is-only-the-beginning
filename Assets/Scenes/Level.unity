@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 875676889}
   - component: {fileID: 875676890}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: WaveSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,11 +323,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 875676888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407307aac34364ad898ac8d427babaff, type: 3}
+  m_Script: {fileID: 11500000, guid: 3da80f4715d7b4a8da6b772e5f30d25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 4881468198836129551, guid: 23730ee24145d4d46b51007310d163ed, type: 3}
+  waveSets:
+  - {fileID: 11400000, guid: 9da7f3d5244b541278cdbd48b0d39bde, type: 2}
+  - {fileID: 11400000, guid: 6b874a73a745b4e248455cee4fec32ea, type: 2}
   timeBetweenSpawns: 3
 --- !u!1001 &888046373
 PrefabInstance:
@@ -1015,7 +1016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ascensionSpeed: 3
   initialForwardSpeed: 5
-  enemySpawner: {fileID: 875676890}
+  waveSpawner: {fileID: 875676890}
   powerupSpawner: {fileID: 633575231}
 --- !u!54 &1379010270
 Rigidbody:

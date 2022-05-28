@@ -1,14 +1,10 @@
 [NOW]
 
-> Add difficulty increase
-  - Create different wave 'sets'. The last one should be really hard and eventually kill you
-
+> Create one proper tile
 
 
 
 [SOON]
-
-> Create one proper tile
 
 > Create Human scene
  · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
@@ -49,6 +45,7 @@
   - Add text messages
   - Some Bg music?
 
+- Add final Waves / Sets
 
 
 [PUBLISH]
