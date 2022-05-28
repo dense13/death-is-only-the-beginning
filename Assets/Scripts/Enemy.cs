@@ -32,6 +32,8 @@ public class Enemy : MonoBehaviour, IDamageable
         // Shot
         else if (other.gameObject.TryGetComponent(out Shot shot))
         {
+            if (shot.IsEnemyShot) return;
+            
             Destroy(shot.gameObject);
             health.TakeDamage(shot.Damage);
         }

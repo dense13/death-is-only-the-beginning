@@ -8,6 +8,11 @@ public class Shot : MonoBehaviour
 
     [Header("Cfg")]
     [SerializeField] private float speed = 20f;
+    [SerializeField] private bool isEnemyShot = false;
+
+
+    // Properties
+    public bool IsEnemyShot { get { return isEnemyShot; } }
 
 
     #region Monobehaviour

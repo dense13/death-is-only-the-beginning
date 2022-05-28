@@ -52,6 +52,17 @@ public class Ghost : MonoBehaviour, IDamageable
         }
     }
 
+
+    private void OnCollisionEnter(Collision other) {
+        if (other.gameObject.TryGetComponent(out Shot shot))
+        {
+            if (!shot.IsEnemyShot) return;
+
+            Destroy(shot.gameObject);
+            health.TakeDamage(shot.Damage);
+        }
+    }
+
     #endregion
 
 
