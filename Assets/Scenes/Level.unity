@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 4881468198836129551, guid: 7cce730faa93a456380b5129ddcc08b1, type: 3}
+  - {fileID: 4881468198836129551, guid: 23730ee24145d4d46b51007310d163ed, type: 3}
   timeBetweenSpawns: 3
 --- !u!1001 &888046373
 PrefabInstance:

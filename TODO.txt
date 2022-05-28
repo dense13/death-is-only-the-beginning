@@ -1,15 +1,12 @@
 [NOW]
 
-- Add shooting enemies
+> Add difficulty increase
+  - Create different wave 'sets'. The last one should be really hard and eventually kill you
+
 
 
 
 [SOON]
-
-- Add shooting permanent enemies (not in Wave - you have to kill them! -, always staying at a distance from player)
-
-> Add difficulty increase
-  - Create different wave 'sets'. The last one should be really hard and eventually kill you
 
 > Create one proper tile
 
@@ -74,6 +71,8 @@
 
 
 [MAYBE]
+- Add shooting permanent enemies (not in Wave - you have to kill them! -, always staying at a distance from player)
+- Add homing missiles for player
 - Find a good font
 - Invulnerable Powerup
 - Compose original music
