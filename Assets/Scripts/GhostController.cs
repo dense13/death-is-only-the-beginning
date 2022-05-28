@@ -30,8 +30,8 @@ public class GhostController : MonoBehaviour
         Vector3 destination = transform.localPosition + new Vector3(horizontalInput, 0, verticalInput);
         if (destination.x < -8.5) destination.x = -8.5f;
         if (destination.x > 8.5) destination.x = 8.5f;
-        if (destination.z < -14) destination.z = -14f;
-        if (destination.z > 14) destination.z = 14f;
+        if (destination.z < -13) destination.z = -13f;
+        if (destination.z > 18) destination.z = 18f;
         // FUTURE: the movement cropping is not resolution independent
 
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination, speed * Time.deltaTime);
