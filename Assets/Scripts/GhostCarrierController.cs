@@ -5,7 +5,7 @@ public class GhostCarrierController : MonoBehaviour
     [Header("Cfg")]
     [SerializeField] private float ascensionSpeed = 3f;
     [SerializeField] private float initialForwardSpeed = 5f;
-
+ 
 
     [Header("Setup")]
     [SerializeField] private WaveSpawner waveSpawner;
@@ -49,7 +49,7 @@ public class GhostCarrierController : MonoBehaviour
         {
             waveSpawner.enabled = true;
             powerupSpawner.enabled = true;
-            transform.position = transform.position + Vector3.forward * forwardSpeed * Time.deltaTime;
+            transform.position = transform.position + Vector3.forward * (forwardSpeed + LevelManager.I.Stage / 2f) * Time.deltaTime;
         }
     }
 

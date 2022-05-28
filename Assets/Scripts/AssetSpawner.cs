@@ -4,7 +4,7 @@ public class AssetSpawner : MonoBehaviour
 {    
     [Header("Setup")]
     [SerializeField] private GameObject[] prefabs;
-    [SerializeField] private float timeBetweenSpawns = 3f;
+    [SerializeField] private float timeBetweenSpawns = 10f;
 
 
     // Private

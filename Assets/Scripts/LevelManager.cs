@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
 
     [Header("Config")]
-    [SerializeField][Tooltip("In seconds")] private float stageLength = 10f;
+    [SerializeField][Tooltip("In seconds")] private float stageLength = 20f;
     
     
     [Header("Setup")]
@@ -67,9 +67,13 @@ public class LevelManager : MonoBehaviour
         if (timeToNextStage <= 0)
         {
             stage++;
+            Debug.Log("STAGE " + (stage + 1));
             timeToNextStage = stageLength;
         }
-        timeToNextStage -= Time.deltaTime;
+        if (ghost.State == Ghost.GhostState.Playing)
+        {
+            timeToNextStage -= Time.deltaTime;
+        }
     }
 
 

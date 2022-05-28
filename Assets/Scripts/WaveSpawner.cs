@@ -4,7 +4,7 @@ public class WaveSpawner : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] private PrefabCollection[] waveSets;
-    [SerializeField] private float timeBetweenSpawns = 3f;
+    [SerializeField] private float initialTimeBetweenSpawns = 6f;
 
 
     // Private
@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Awake()
     {
-        timeToNextSpawn = timeBetweenSpawns;
+        timeToNextSpawn = initialTimeBetweenSpawns;
     }
 
 
@@ -25,7 +25,7 @@ public class WaveSpawner : MonoBehaviour
         {
             PrefabCollection waveSet = GetWaveSet();
             Instantiate(waveSet.GetRandom(), transform.position, transform.rotation);
-            timeToNextSpawn = timeBetweenSpawns;
+            timeToNextSpawn = Mathf.Max(1f, initialTimeBetweenSpawns - LevelManager.I.Stage / 3f);
         }
         timeToNextSpawn -= Time.deltaTime;
     }
