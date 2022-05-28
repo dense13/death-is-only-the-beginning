@@ -1,10 +1,11 @@
 [NOW]
-  - Add multi-shot
+
+- Add shooting enemies
+
 
 
 [SOON]
 
-- Add shooting enemies
 - Add shooting permanent enemies (not in Wave - you have to kill them! -, always staying at a distance from player)
 
 > Add difficulty increase
@@ -20,6 +21,7 @@
 - Add bye bye screen
 
 - Check TODO
+
 
 
 

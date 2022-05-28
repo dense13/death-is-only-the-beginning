@@ -18,7 +18,7 @@ public class Shot : MonoBehaviour
 
 
     private void Update() {
-        transform.position = transform.position + Vector3.forward * speed * Time.deltaTime;
+        transform.position = transform.position + transform.forward * speed * Time.deltaTime;
     }
 
     #endregion

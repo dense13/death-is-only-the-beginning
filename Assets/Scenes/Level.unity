@@ -184,10 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 7589013046955373853, guid: f71cf7d3215d84d09aab9d49ce1b6abd, type: 3}
-  - {fileID: 7589013046955373853, guid: 8157ce4f7905f46a5bbe1636b7d05793, type: 3}
-  - {fileID: 7589013046955373853, guid: 09fb7dc0937a4432b8086e2a26b59c39, type: 3}
-  - {fileID: 7589013046955373853, guid: 078c4bd5ab0d84f208b3eb5977f840cf, type: 3}
+  - {fileID: 7589013046955373853, guid: 81ed1cb363e7642c185f92225ebc66d1, type: 3}
   timeBetweenSpawns: 4
 --- !u!4 &633575232
 Transform:

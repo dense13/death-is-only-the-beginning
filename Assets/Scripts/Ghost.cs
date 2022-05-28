@@ -11,7 +11,7 @@ public class Ghost : MonoBehaviour, IDamageable
 
 
     [Header("Cfg")]
-    [SerializeField] private float initialTimeBetweenShots = 1f;
+    [SerializeField] private float initialTimeBetweenShots = 1f; // FUTURE: shooting should be in a separate class
 
 
     [Header("Setup")]
@@ -23,6 +23,7 @@ public class Ghost : MonoBehaviour, IDamageable
 
     // Private
     private GhostController ghostController;
+    private int numShots = 1;
     private float timeBetweenShots;
     private float timeToNextShot;
 
@@ -72,6 +73,16 @@ public class Ghost : MonoBehaviour, IDamageable
     }
 
 
+    public bool UpgradeMultishot()
+    {
+        // Returns false if max num shots are reached
+        if (numShots == 5) return false;
+        
+        numShots++;
+        return true;
+    }
+
+
     public bool Heal()
     {
         return health.Heal(1f);
@@ -111,7 +122,27 @@ public class Ghost : MonoBehaviour, IDamageable
 
     private void Shoot()
     {
-        Instantiate(shotPrefab, shotPosition.position, shotPosition.rotation);
+        bool evenShots = (numShots % 2 == 0);
+        if (evenShots)
+        {
+            const float SHOT_SEPARATION = 0.5f;
+            float leftOffset = SHOT_SEPARATION * (numShots / 2 - 0.5f);
+            for (int i = 0; i < numShots; i++)
+            {
+                Vector3 position = shotPosition.position + Vector3.right * i * SHOT_SEPARATION + Vector3.left * leftOffset;
+                Instantiate(shotPrefab, position, shotPosition.rotation);
+            }
+        }
+        else
+        {
+            const float SHOT_SPREAD = 5f;
+            int numSideShots = (numShots - 1) / 2;
+            for (int i = -numSideShots; i <= numSideShots; i++)
+            {
+                Vector3 rotation = Vector3.forward + Vector3.up * SHOT_SPREAD * i; // FUTURE: not sure why it's Vector3.up, I thought it should've been Vector3.right...
+                Instantiate(shotPrefab, shotPosition.position, Quaternion.Euler(rotation));
+            }
+        }
     }
 
     #endregion
