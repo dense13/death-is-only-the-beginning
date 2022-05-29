@@ -20,6 +20,11 @@ public class UIEndPanel : MonoBehaviour
     }
 
 
+    private void OnEnable() {
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+
     private void Start()
     {
         txtTopScore.text = "" + GameManager.I.TopScore;

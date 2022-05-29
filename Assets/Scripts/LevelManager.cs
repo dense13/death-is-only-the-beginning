@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
 
     // Properties
     public int Stage { get { return stage; } }
+    public HashSet<PowerupType> AvailablePowerups { get { return availablePowerups; } }
 
 
     // Private
@@ -62,13 +63,15 @@ public class LevelManager : MonoBehaviour
         uiHud = FindObjectOfType<UIHud>();
         uiHud.gameObject.SetActive(false);
 
+        ghostHealth.OnHealthChange += ProcessOnHealthChange;
+        Cursor.lockState = CursorLockMode.Locked;
+        
         player.gameObject.SetActive(true);
         ghost.gameObject.SetActive(false);
         vcamHuman.gameObject.SetActive(true);
         vcamGhost.gameObject.SetActive(false);
         uiEndPanel.gameObject.SetActive(false);
 
-        ghostHealth.OnHealthChange += ProcessOnHealthChange;
 
         StartCoroutine(__StartCountdown());
     }
@@ -178,6 +181,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
+        yield return new WaitForSeconds(3f);
         uiMsgCanvas.gameObject.SetActive(true);
         ShowMessage("Warning, global warming has just reached 4 degrees.");
         yield return new WaitForSeconds(5f);

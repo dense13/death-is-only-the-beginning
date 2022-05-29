@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum PowerupType { Speed, ShootingSpeed, Health, Bomb, Multishot, Invulnerability }
+public enum PowerupType { Bomb, Health, Invulnerability, Multishot, Speed , ShootingSpeed }
 
 public class Powerup : MonoBehaviour
 {

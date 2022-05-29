@@ -9,13 +9,14 @@ public class GhostCarrierController : MonoBehaviour
 
     [Header("Setup")]
     [SerializeField] private WaveSpawner waveSpawner;
-    [SerializeField] private AssetSpawner powerupSpawner;
+    [SerializeField] private PowerupSpawner powerupSpawner;
 
 
     // Private
     private Ghost ghost;
     private Vector3 ascensionPoint;
     private bool isAscensionPointSet = false;
+    private bool isRunning = false;
     private float forwardSpeed;
 
 
@@ -47,8 +48,13 @@ public class GhostCarrierController : MonoBehaviour
         }
         else
         {
-            waveSpawner.enabled = true;
-            powerupSpawner.enabled = true;
+            if (!isRunning)
+            {
+                isRunning = true;
+                waveSpawner.enabled = true;
+                powerupSpawner.PrepareCollectedPrefabs();
+                powerupSpawner.enabled = true;
+            }
             transform.position = transform.position + Vector3.forward * (forwardSpeed + LevelManager.I.Stage / 2f) * Time.deltaTime;
         }
     }
