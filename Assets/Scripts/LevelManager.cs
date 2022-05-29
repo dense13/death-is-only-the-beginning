@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -10,6 +11,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Config")]
     [SerializeField][Tooltip("In seconds")] private float stageLength = 20f;
+    [SerializeField] private int secondsToEndOfHumanity = 10;
     
     
     [Header("Setup")]
@@ -33,6 +35,9 @@ public class LevelManager : MonoBehaviour
     private int score = 0;
     private int stage = 0;
     private float timeToNextStage;
+    private HashSet<PowerupType> availablePowerups = new HashSet<PowerupType>();
+    private bool isInHumanPhase = true;
+
 
     #region Monobehaviour
 
@@ -59,19 +64,24 @@ public class LevelManager : MonoBehaviour
         uiEndPanel.gameObject.SetActive(false);
 
         ghostHealth.OnHealthChange += ProcessOnHealthChange;
+
+        StartCoroutine(__StartCountdown());
     }
 
 
     private void Update()
     {
-        if (timeToNextStage <= 0)
-        {
-            stage++;
-            Debug.Log("STAGE " + (stage + 1));
-            timeToNextStage = stageLength;
-        }
+        if (isInHumanPhase) return;
+
+        // If Ghost is playing
         if (ghost.State == Ghost.GhostState.Playing)
         {
+            if (timeToNextStage <= 0)
+            {
+                stage++;
+                Debug.Log("STAGE " + (stage + 1));
+                timeToNextStage = stageLength;
+            }
             timeToNextStage -= Time.deltaTime;
         }
     }
@@ -87,16 +97,16 @@ public class LevelManager : MonoBehaviour
 
     #region Public
 
+    public void AddPowerupType(PowerupType powerupType)
+    {
+        availablePowerups.Add(powerupType);
+    }
+
+
     public void ProcessEndOfTile(GameObject tile)
     {
         Instantiate(GetRandomTilePrefab(), tile.transform.position + Vector3.forward * tileLength * 2, Quaternion.identity); // FUTURE: 2 is the number of initial tiles
         Destroy(tile, 10f);
-    }
-
-
-    public void EndHumanPhase()
-    {
-        StartCoroutine(__EndHumanPhase());
     }
 
 
@@ -150,11 +160,35 @@ public class LevelManager : MonoBehaviour
         return tilePrefabs[Random.Range(0, tilePrefabs.Length)];
     }
 
+
+    private void ShowMessage(string msg)
+    {
+        Debug.Log(msg);
+    }
+
     #endregion
 
 
     #region Coroutines
 
+    private IEnumerator __StartCountdown()
+    {
+        ShowMessage("Warning, global warming has just reached 4 degrees.");
+        yield return new WaitForSeconds(5f);
+        ShowMessage("The Earth core has become fatally unstable...");
+        yield return new WaitForSeconds(5f);
+        ShowMessage("... and the planet will explode in...");
+        yield return new WaitForSeconds(5f);
+        for (int i = secondsToEndOfHumanity; i >= 0; i--)
+        {
+            ShowMessage($"... {i} ...");
+            yield return new WaitForSeconds(1f);
+        }
+        ShowMessage("KA-BOOOM!!!!");
+        yield return __EndHumanPhase();
+    }
+    
+    
     private IEnumerator __EndHumanPhase()
     {
         // Place first tile
@@ -166,6 +200,8 @@ public class LevelManager : MonoBehaviour
         player.gameObject.SetActive(false);
         ghostCarrierTr.position = player.transform.position + Vector3.back * ghost.transform.position.z;
         ghost.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
 
         // Transition camera
         ghost.State = Ghost.GhostState.Transitioning;

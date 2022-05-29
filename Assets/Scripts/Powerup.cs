@@ -1,8 +1,9 @@
 using UnityEngine;
 
+public enum PowerupType { Speed, ShootingSpeed, Health, Bomb, Multishot, Invulnerability }
+
 public class Powerup : MonoBehaviour
 {
-    private enum PowerupType { Speed, ShootingSpeed, Health, Bomb, Multishot, Invulnerability }
 
     private const int SCORE_FOR_UNUSABLE_POWERUP = 10;
 

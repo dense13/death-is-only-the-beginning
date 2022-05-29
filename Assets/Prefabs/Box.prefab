@@ -94,6 +94,8 @@ GameObject:
   - component: {fileID: 264483061557188786}
   - component: {fileID: 264483061557188785}
   - component: {fileID: 264483061557188784}
+  - component: {fileID: 1098434189967118920}
+  - component: {fileID: 5106654211437192576}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -142,3 +144,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4b85116c14840948e2ccf58f4aabff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  powerupType: 0
+--- !u!114 &1098434189967118920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264483061557188791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24d93b3634d74a148f2665eeca1d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0.2, z: 0}
+  speed: 2
+  startDelay: 0
+  useWorldSpace: 0
+--- !u!114 &5106654211437192576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264483061557188791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91f62f756e84b478ac708a93b938f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  direction: {x: 0, y: 1, z: 0}
