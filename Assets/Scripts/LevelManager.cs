@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;
     [SerializeField] private UIEndPanel uiEndPanel;
+    [SerializeField] private Canvas uiMsgCanvas;
+    [SerializeField] private TMP_Text txtMsg;
+    
 
 
     // Properties
@@ -45,6 +49,7 @@ public class LevelManager : MonoBehaviour
     {
         SetupSingleton();
         timeToNextStage = stageLength;
+        uiMsgCanvas.gameObject.SetActive(false);
     }
 
 
@@ -163,7 +168,7 @@ public class LevelManager : MonoBehaviour
 
     private void ShowMessage(string msg)
     {
-        Debug.Log(msg);
+        txtMsg.text = msg; // FUTURE: do it line by line
     }
 
     #endregion
@@ -173,6 +178,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
+        uiMsgCanvas.gameObject.SetActive(true);
         ShowMessage("Warning, global warming has just reached 4 degrees.");
         yield return new WaitForSeconds(5f);
         ShowMessage("The Earth core has become fatally unstable...");

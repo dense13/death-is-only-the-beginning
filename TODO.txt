@@ -1,12 +1,12 @@
 [NOW]
 
-> Create Human scene
- · Simple possibility: just time (self-destroy count-down), you run around and collect boxes, for a short time
-
+- Use the collected powerups only
 
 
 
 [SOON]
+
+- Do the transition going up
 
 - Add Menu Scene
 
