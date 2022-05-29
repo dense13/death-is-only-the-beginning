@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour, IDamageable
@@ -12,12 +13,14 @@ public class Ghost : MonoBehaviour, IDamageable
 
     [Header("Cfg")]
     [SerializeField] private float initialTimeBetweenShots = 1f; // FUTURE: shooting should be in a separate class
+    [SerializeField] private float invulnerabilityDuration = 10f;
 
 
     [Header("Setup")]
     [SerializeField] private Health health;
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
+    [SerializeField] private GameObject modelGO;
 
 
     // Private
@@ -25,6 +28,12 @@ public class Ghost : MonoBehaviour, IDamageable
     private int numShots = 1;
     private float timeBetweenShots;
     private float timeToNextShot;
+
+    private bool isInvulnerable = false;
+    private bool isEndingInvulnerability = false;
+    private float remainingInvulnerability = 0;
+    private Coroutine crInvulnerabilityWarning;
+    float invulnerabilityWarningTime = 3f;
 
 
     #region Monobehaviour
@@ -43,12 +52,16 @@ public class Ghost : MonoBehaviour, IDamageable
     {
         if (State != GhostState.Playing) return;
 
+        // Update shooting
         timeToNextShot -= Time.deltaTime;
         if (timeToNextShot < 0)
         {
             timeToNextShot = timeBetweenShots;
             Shoot();
         }
+
+        // Update invulnerability
+        if (isInvulnerable) UpdateInvulnerability();
     }
 
 
@@ -58,7 +71,7 @@ public class Ghost : MonoBehaviour, IDamageable
             if (!shot.IsEnemyShot) return;
 
             Destroy(shot.gameObject);
-            health.TakeDamage(shot.Damage);
+            ReceiveHit(shot.Damage);
         }
     }
 
@@ -99,6 +112,14 @@ public class Ghost : MonoBehaviour, IDamageable
     }
 
 
+    public void ReceiveHit(float damage)
+    {
+        if (isInvulnerable) return;
+
+        health.TakeDamage(damage);
+    }
+
+
     public void TriggerExplosion()
     {
         // FUTURE: this shouldn't be in Ghost, and probably not use FindObjectsOfType, but for the Game Jam that'll do. :)
@@ -108,6 +129,18 @@ public class Ghost : MonoBehaviour, IDamageable
         {
             enemy.Die();
         }
+    }
+
+
+    public void StartInvulnerability()
+    {
+        Debug.Log("START INVULNERABILITY");
+
+        isInvulnerable = true;
+        isEndingInvulnerability = false;
+        remainingInvulnerability = invulnerabilityDuration;
+        transform.localScale = Vector3.one * 1.3f;
+        modelGO.SetActive(true); // in case I was flashing
     }
 
     #endregion
@@ -152,6 +185,45 @@ public class Ghost : MonoBehaviour, IDamageable
                 Instantiate(shotPrefab, shotPosition.position, Quaternion.Euler(rotation));
             }
         }
+    }
+
+
+    private void UpdateInvulnerability()
+    {
+        if (remainingInvulnerability > 0)
+        {
+            if (remainingInvulnerability <= invulnerabilityWarningTime && !isEndingInvulnerability)
+            {
+                isEndingInvulnerability = true;
+                StartCoroutine(RunInvulnerabilityWarning());
+            }
+            remainingInvulnerability -= Time.deltaTime;
+        }
+        else
+        {
+            // De-activate invulnerability
+            isInvulnerable = false;
+            isEndingInvulnerability = false;
+            transform.localScale = Vector3.one;
+            modelGO.SetActive(true);
+        }
+    }
+
+
+    private IEnumerator RunInvulnerabilityWarning()
+    {
+        float remainingWarningTime = invulnerabilityWarningTime;
+        bool shouldHide = false;
+        float flashingSpeed = 0.25f;
+        while (isEndingInvulnerability && remainingWarningTime > 0)
+        {
+            modelGO.SetActive(!shouldHide);
+            shouldHide = !shouldHide;
+            remainingWarningTime -= flashingSpeed;
+            yield return new WaitForSeconds(flashingSpeed);
+        }
+        isEndingInvulnerability = false;
+        modelGO.SetActive(true);
     }
 
     #endregion

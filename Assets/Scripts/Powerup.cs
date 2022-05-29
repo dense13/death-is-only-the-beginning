@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    private enum PowerupType { Speed, ShootingSpeed, Health, Bomb, Multishot }
+    private enum PowerupType { Speed, ShootingSpeed, Health, Bomb, Multishot, Invulnerability }
 
     private const int SCORE_FOR_UNUSABLE_POWERUP = 10;
 
@@ -38,6 +38,9 @@ public class Powerup : MonoBehaviour
                     break;
                 case PowerupType.Multishot:
                     if (!ghost.UpgradeMultishot()) UnusablePowerup();
+                    break;
+                case PowerupType.Invulnerability:
+                    ghost.StartInvulnerability();
                     break;
                 default:
                     Debug.LogError("OOPS! Unrecognized powerup type " + type);

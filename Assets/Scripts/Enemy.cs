@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (other.gameObject.TryGetComponent(out Ghost ghost))
         {
 
-            ghost.GetComponent<Health>().TakeDamage(collisionDamage);
+            ghost.ReceiveHit(collisionDamage);
             Die();
         }
         // Shot
