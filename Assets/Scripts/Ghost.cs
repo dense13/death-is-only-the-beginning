@@ -14,6 +14,7 @@ public class Ghost : MonoBehaviour, IDamageable
     [Header("Cfg")]
     [SerializeField] private float initialTimeBetweenShots = 1f; // FUTURE: shooting should be in a separate class
     [SerializeField] private float invulnerabilityDuration = 10f;
+    [SerializeField] private float invulnerabilitySize = 2f;
 
 
     [Header("Setup")]
@@ -21,6 +22,7 @@ public class Ghost : MonoBehaviour, IDamageable
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
     [SerializeField] private GameObject modelGO;
+    [SerializeField] private GameObject modelInvulnerableGO;
 
 
     // Private
@@ -45,6 +47,9 @@ public class Ghost : MonoBehaviour, IDamageable
         State = GhostState.Off;
         timeBetweenShots = initialTimeBetweenShots;
         timeToNextShot = timeBetweenShots;
+        modelGO.SetActive(true);
+        modelInvulnerableGO.SetActive(false);
+        transform.localScale = Vector3.one;
     }
 
 
@@ -139,8 +144,9 @@ public class Ghost : MonoBehaviour, IDamageable
         isInvulnerable = true;
         isEndingInvulnerability = false;
         remainingInvulnerability = invulnerabilityDuration;
-        transform.localScale = Vector3.one * 1.3f;
-        modelGO.SetActive(true); // in case I was flashing
+        modelGO.SetActive(false);
+        modelInvulnerableGO.SetActive(true);
+        transform.localScale = Vector3.one * invulnerabilitySize; // FUTURE: tween (and back at the end of invulnerability)
     }
 
     #endregion
@@ -206,6 +212,8 @@ public class Ghost : MonoBehaviour, IDamageable
             isEndingInvulnerability = false;
             transform.localScale = Vector3.one;
             modelGO.SetActive(true);
+            modelInvulnerableGO.SetActive(false);
+            transform.localScale = Vector3.one;
         }
     }
 
@@ -217,13 +225,11 @@ public class Ghost : MonoBehaviour, IDamageable
         float flashingSpeed = 0.25f;
         while (isEndingInvulnerability && remainingWarningTime > 0)
         {
-            modelGO.SetActive(!shouldHide);
+            modelInvulnerableGO.SetActive(!shouldHide);
             shouldHide = !shouldHide;
             remainingWarningTime -= flashingSpeed;
             yield return new WaitForSeconds(flashingSpeed);
         }
-        isEndingInvulnerability = false;
-        modelGO.SetActive(true);
     }
 
     #endregion
