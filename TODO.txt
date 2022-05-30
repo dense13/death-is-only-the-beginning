@@ -1,6 +1,6 @@
 [NOW]
 
-- Check TODO
+- BUG: hi score has stopped working
 
 
 

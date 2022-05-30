@@ -235,13 +235,15 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
         ShowMessage("Wait, what? What the @#€∞$???");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         ShowMessage("What happened there? I didn't stand a chance at all!");
         yield return new WaitForSeconds(4f);
         ShowMessage("What kind of stupid game is this!?!");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         ShowMessage("Sigh... so I guess I'm dead, and it's time to rest...");
         yield return new WaitForSeconds(4f);
+        ShowMessage("");
+        yield return new WaitForSeconds(2f);
         ShowMessage("... or is it?");
 
         // Ghost camera

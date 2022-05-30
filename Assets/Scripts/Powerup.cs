@@ -11,6 +11,11 @@ public class Powerup : MonoBehaviour
     [SerializeField] private PowerupType type = PowerupType.Speed;
 
 
+    [Header("Setup")]
+    [SerializeField] private GameObject vfxExplosion;
+
+
+
     // Private
     private bool hasBeenUsed = false;
 
@@ -48,7 +53,8 @@ public class Powerup : MonoBehaviour
                     break;
             }
             hasBeenUsed = true;
-            Destroy(gameObject); // FUTURE: SFX, instead of just destroying
+            Instantiate(vfxExplosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

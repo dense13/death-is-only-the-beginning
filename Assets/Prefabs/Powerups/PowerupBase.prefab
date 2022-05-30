@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6114636802669416518}
   - component: {fileID: 7090456981657185363}
   - component: {fileID: 2291314148055785898}
+  - component: {fileID: 3834354823193933512}
+  - component: {fileID: 6483296515646644590}
   m_Layer: 0
   m_Name: PowerupBase
   m_TagString: Untagged
@@ -59,3 +61,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  vfxExplosion: {fileID: 1076544425457449389, guid: e5f5d02b4fd1e4c0895e8988f36a6e42,
+    type: 3}
+--- !u!114 &3834354823193933512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843107236094274949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24d93b3634d74a148f2665eeca1d3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 0, y: 0.4, z: 0}
+  speed: 2
+  startDelay: 0
+  useWorldSpace: 0
+--- !u!114 &6483296515646644590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843107236094274949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91f62f756e84b478ac708a93b938f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  direction: {x: 0, y: 1, z: 0}

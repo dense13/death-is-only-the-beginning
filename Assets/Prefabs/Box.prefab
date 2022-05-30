@@ -145,6 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupType: 0
+  vfxExplosion: {fileID: 1076544425457449389, guid: 336c7808acaa6497995dbf12006679aa,
+    type: 3}
 --- !u!114 &1098434189967118920
 MonoBehaviour:
   m_ObjectHideFlags: 0

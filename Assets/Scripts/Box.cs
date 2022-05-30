@@ -6,11 +6,16 @@ public class Box : MonoBehaviour
     [SerializeField] private PowerupType powerupType;
 
 
+    [Header("Setup")]
+    [SerializeField] private GameObject vfxExplosion;
+
+
+
     private void OnTriggerEnter(Collider other) {
         if (other.TryGetComponent(out Player player))
         {
             player.PickupBox(powerupType);
-            // TODO: add SFX
+            Instantiate(vfxExplosion, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
