@@ -58,7 +58,7 @@ public class Shot : MonoBehaviour
             }
             else
             {
-                 // TODO: homing Player shots. For now, just move them as if not homing
+                 // FUTURE: homing Player shots. For now, just move them as if not homing
                 transform.position = transform.position + transform.forward * speed * Time.deltaTime;
             }
         }

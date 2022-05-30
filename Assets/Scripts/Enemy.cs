@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour, IDamageable
         LevelManager.I.AddScore(scoreValue);
         Instantiate(vfxExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        // TODO: explode instead of just destroying
     }
 
     #endregion

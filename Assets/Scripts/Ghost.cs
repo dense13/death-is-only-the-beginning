@@ -18,14 +18,15 @@ public class Ghost : MonoBehaviour, IDamageable
 
 
     [Header("Setup")]
-    [SerializeField] private Health health;
     [SerializeField] private GameObject shotPrefab;
     [SerializeField] private Transform shotPosition;
     [SerializeField] private GameObject modelGO;
     [SerializeField] private GameObject modelInvulnerableGO;
+    [SerializeField] private GameObject vfxExplosion;
 
 
     // Private
+    private Health health;
     private GhostController ghostController;
     private int numShots = 1;
     private float timeBetweenShots;
@@ -167,9 +168,9 @@ public class Ghost : MonoBehaviour, IDamageable
     public void Die()
     {
         ghostController.enabled = false;
+        Instantiate(vfxExplosion, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         State = GhostState.Dead;
-        // TODO: explode instead of just hiding
         LevelManager.I.EndGhostPhase();
     }
 
