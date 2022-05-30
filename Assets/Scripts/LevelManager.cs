@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera vcamTraveling;
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;
+    [SerializeField] private GameObject vfxExplosion;
     [SerializeField] private UIEndPanel uiEndPanel;
     [SerializeField] private Canvas uiMsgCanvas;
     [SerializeField] private TMP_Text txtMsg;
@@ -186,6 +187,7 @@ public class LevelManager : MonoBehaviour
     #endregion
 
 
+
     #region Coroutines
 
     private IEnumerator __StartCountdown()
@@ -209,6 +211,8 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         ShowMessage("KA-BOOOM!!!!");
+        GameManager.I.PlaySfx("WORLD_DESTRUCTION");
+        StartCoroutine(__TriggerExplosionVfx());
         yield return __EndHumanPhase();
     }
     
@@ -225,9 +229,9 @@ public class LevelManager : MonoBehaviour
         ghostCarrierTr.position = player.transform.position + Vector3.back * ghost.transform.position.z;
         ghost.gameObject.SetActive(true);
 
-        StartCoroutine(GameManager.I.PlayMusic("TRANSITION"));
         yield return new WaitForSeconds(3f);
         ShowMessage("");
+        StartCoroutine(GameManager.I.PlayMusic("TRANSITION"));
 
         // Travelling camera
         ghost.State = Ghost.GhostState.Transitioning;
@@ -283,6 +287,20 @@ public class LevelManager : MonoBehaviour
             ShowMessage("");
         }
     }
+
+
+    private IEnumerator __TriggerExplosionVfx()
+    {
+        Vector3 center = player.transform.position;
+        Instantiate(vfxExplosion, center, Quaternion.identity);
+        for (int i = 0; i < 40; i++)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Vector3 randomPosition = center + Vector3.forward * Random.Range(-6f, 6f) + Vector3.left * Random.Range(-6f, 6f);
+            Instantiate(vfxExplosion, randomPosition, Quaternion.identity);
+        }
+    }
+
 
     #endregion
 

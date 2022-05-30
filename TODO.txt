@@ -1,21 +1,13 @@
 [NOW]
 
-- Enemy hurt SFX
-- Enemy explosion SFX
-- Powerup/box pickup SFX
-- Ghost hurt SFX
-- Ghost death SFX
+- Add final Waves / Sets
 
 
 
 [SOON]
 
 
-- EndHumanPhase mega explosion
 
-- Add final Waves / Sets
-
-- Enemy hurt VFX
 
 
 

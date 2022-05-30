@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour, IDamageable
             
             Destroy(shot.gameObject);
             health.TakeDamage(shot.Damage);
+            if (health.GetRatio() > 0) GameManager.I.PlaySfx("ENEMY_HURT");
         }
     }
 
@@ -53,6 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
         isDead = true;
         LevelManager.I.AddScore(scoreValue);
         Instantiate(vfxExplosion, transform.position, Quaternion.identity);
+        GameManager.I.PlaySfx("ENEMY_DIE");
         Destroy(gameObject);
     }
 

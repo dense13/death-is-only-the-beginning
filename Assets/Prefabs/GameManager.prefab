@@ -148,9 +148,14 @@ MonoBehaviour:
   musicTransition: {fileID: 8300000, guid: 0edf0f5bfa1d34fd0bd9efa7c8607111, type: 3}
   musicGhost: {fileID: 8300000, guid: 0a6b2d1b1ee9f42c488021e89ee43f37, type: 3}
   audioSourceSfx: {fileID: 7731470697347824203}
-  sfxGhostShot: {fileID: 8300000, guid: 1c7b40a54c53344abb8dd82c9f9cbab5, type: 3}
-  sfxEnemyShot: {fileID: 8300000, guid: 5775aa12f53b643d692154557306d203, type: 3}
   sfxPowerup: {fileID: 8300000, guid: 912ac768bd4f24d68a80d84e9e9b5fd3, type: 3}
+  sfxWorldDestruction: {fileID: 8300000, guid: 95bfa9fa9e00641e2acc88067b2ef562, type: 3}
+  sfxGhostShot: {fileID: 8300000, guid: 1c7b40a54c53344abb8dd82c9f9cbab5, type: 3}
+  sfxGhostHurt: {fileID: 8300000, guid: 66282fe1f469649fda063cbb0ba74202, type: 3}
+  sfxGhostDie: {fileID: 8300000, guid: c81e06157a52c4f6290373e0a5ec3f09, type: 3}
+  sfxEnemyShot: {fileID: 8300000, guid: 5775aa12f53b643d692154557306d203, type: 3}
+  sfxEnemyHurt: {fileID: 8300000, guid: b473e132834504cf6a102aeb194b70fc, type: 3}
+  sfxEnemyDie: {fileID: 8300000, guid: c13f977ad5e2f4b609d884ba1fd7409d, type: 3}
   TopScore: 0
 --- !u!1 &4304797926595827699
 GameObject:

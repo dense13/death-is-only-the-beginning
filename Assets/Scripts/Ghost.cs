@@ -130,6 +130,7 @@ public class Ghost : MonoBehaviour, IDamageable
         if (isInvulnerable) return;
 
         health.TakeDamage(damage);
+        GameManager.I.PlaySfx("GHOST_HURT");
         float healthRatio = health.GetRatio();
         if (healthRatio <= 0.3) LevelManager.I.FlashMessage("Oh oh, this is really not looking so good...");
         else if (healthRatio <= 0.5) LevelManager.I.FlashMessage("Ouch, that hurt! Not feeling so well...");
@@ -171,6 +172,7 @@ public class Ghost : MonoBehaviour, IDamageable
         Instantiate(vfxExplosion, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         State = GhostState.Dead;
+        GameManager.I.PlaySfx("GHOST_DIE");
         LevelManager.I.EndGhostPhase();
     }
 

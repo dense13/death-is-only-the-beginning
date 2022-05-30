@@ -1726,8 +1726,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229741160552977794}
-  m_LocalRotation: {x: 0.24914497, y: 0.16675909, z: -0.043596, w: 0.95300454}
-  m_LocalPosition: {x: 31.71711, y: 14.689514, z: -24.94309}
+  m_LocalRotation: {x: 0.22603664, y: -0, z: -0, w: 0.9741188}
+  m_LocalPosition: {x: 0, y: 7.45, z: -13.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1910,6 +1910,8 @@ MonoBehaviour:
   vcamGhost: {fileID: 175008503}
   tilePrefabs:
   - {fileID: 7898136204909109780, guid: 0fb5c604a42ce40fda8eb69f08ad78a2, type: 3}
+  vfxExplosion: {fileID: 5834347676968388690, guid: f9d46db34f92049d3a4009e396148f98,
+    type: 3}
   uiEndPanel: {fileID: 504836493}
   uiMsgCanvas: {fileID: 8360208214188060074}
   txtMsg: {fileID: 7101131132552180272}

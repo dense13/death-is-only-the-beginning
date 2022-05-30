@@ -18,9 +18,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Setup - SFX")]
     [SerializeField] private AudioSource audioSourceSfx;
-    [SerializeField] private AudioClip sfxGhostShot;
-    [SerializeField] private AudioClip sfxEnemyShot;
     [SerializeField] private AudioClip sfxPowerup;
+    [SerializeField] private AudioClip sfxWorldDestruction;
+    [SerializeField] private AudioClip sfxGhostShot;
+    [SerializeField] private AudioClip sfxGhostHurt;
+    [SerializeField] private AudioClip sfxGhostDie;
+    [SerializeField] private AudioClip sfxEnemyShot;
+    [SerializeField] private AudioClip sfxEnemyHurt;
+    [SerializeField] private AudioClip sfxEnemyDie;
 
 
     // Properties
@@ -54,9 +59,14 @@ public class GameManager : MonoBehaviour
     {
         audioSourceSfx.volume = Random.Range(0.9f, 1.0f) * volumeFactor;
         audioSourceSfx.pitch = Random.Range(0.9f, 1.1f);
-        if (id == "GHOST_SHOT") audioSourceSfx.PlayOneShot(sfxGhostShot, 0.6f);
+        if (id == "POWERUP") audioSourceSfx.PlayOneShot(sfxPowerup, 1f);
+        else if (id == "WORLD_DESTRUCTION") audioSourceSfx.PlayOneShot(sfxWorldDestruction, 0.6f);
+        else if (id == "GHOST_SHOT") audioSourceSfx.PlayOneShot(sfxGhostShot, 0.6f);
+        else if (id == "GHOST_HURT") audioSourceSfx.PlayOneShot(sfxGhostHurt, 0.6f);
+        else if (id == "GHOST_DIE") audioSourceSfx.PlayOneShot(sfxGhostDie, 0.6f);
         else if (id == "ENEMY_SHOT") audioSourceSfx.PlayOneShot(sfxEnemyShot, 0.4f);
-        else if (id == "POWERUP") audioSourceSfx.PlayOneShot(sfxPowerup, 1f);
+        else if (id == "ENEMY_HURT") audioSourceSfx.PlayOneShot(sfxEnemyHurt, 0.5f);
+        else if (id == "ENEMY_DIE") audioSourceSfx.PlayOneShot(sfxEnemyDie, 0.4f);
         else Debug.LogError("Unrecognized SFX: " + id);
     }
 
