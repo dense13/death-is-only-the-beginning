@@ -50,6 +50,6 @@ public class UIEndPanel : MonoBehaviour
 
     public void BtClickQuit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Credits");
     }
 }

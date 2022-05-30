@@ -130,7 +130,7 @@ public class Ghost : MonoBehaviour, IDamageable
 
         health.TakeDamage(damage);
         float healthRatio = health.GetRatio();
-        if (healthRatio <= 0.3) LevelManager.I.FlashMessage("Oh oh, this is really looking grim");
+        if (healthRatio <= 0.3) LevelManager.I.FlashMessage("Oh oh, this is really not looking so good...");
         else if (healthRatio <= 0.5) LevelManager.I.FlashMessage("Ouch, that hurt! Not feeling so well...");
     }
 

@@ -191,7 +191,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
-        //* DEBUG: Fast version
+        /* DEBUG: Fast version
         yield return __EndHumanPhase();
         yield break;
         // */

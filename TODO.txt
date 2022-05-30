@@ -1,15 +1,12 @@
 [NOW]
 
-- Replace player (and face the direction of movement)
+- Check TODO
+
 
 
 [SOON]
 
-- Add Menu Scene
-
-- Add bye bye screen
-
-- Check TODO
+- Create powerup boxes
 
 
 
@@ -17,7 +14,6 @@
 [DRESS-IT-UP]
 
 - Add some background music
-- Add some skydome
 
 - Shot SFX
 - Enemy explosions
@@ -36,12 +32,8 @@
 
 - EndHumanPhase mega explosion
 
-> Improve transition cinematic
-  - Before hitting the vcamGhost, add a vcamTransition that's on a track
-  - Add text messages
-  - Some Bg music?
-
 - Add final Waves / Sets
+
 
 
 [PUBLISH]
