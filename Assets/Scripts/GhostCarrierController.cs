@@ -39,7 +39,7 @@ public class GhostCarrierController : MonoBehaviour
         {
             if (!isAscensionPointSet)
             {
-                ascensionPoint = transform.position + Vector3.up * 11f;
+                ascensionPoint = transform.position + Vector3.up * 50f;
                 isAscensionPointSet = true;
             }
 

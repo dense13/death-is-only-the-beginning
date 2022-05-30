@@ -60,5 +60,11 @@ public class Health : MonoBehaviour
     }
 
 
+    public float GetRatio()
+    {
+        return health / initialHealth;
+    }
+
+
     #endregion
 }

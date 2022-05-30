@@ -1,12 +1,9 @@
 [NOW]
 
-- Use the collected powerups only
-
+- Replace player (and face the direction of movement)
 
 
 [SOON]
-
-- Do the transition going up
 
 - Add Menu Scene
 

@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     
     [Header("Setup")]
     [SerializeField] private CinemachineVirtualCamera vcamHuman;
+    [SerializeField] private CinemachineVirtualCamera vcamTraveling;
     [SerializeField] private CinemachineVirtualCamera vcamGhost;
     [SerializeField] private GameObject[] tilePrefabs;
     [SerializeField] private UIEndPanel uiEndPanel;
@@ -69,6 +70,7 @@ public class LevelManager : MonoBehaviour
         player.gameObject.SetActive(true);
         ghost.gameObject.SetActive(false);
         vcamHuman.gameObject.SetActive(true);
+        vcamTraveling.gameObject.SetActive(false);
         vcamGhost.gameObject.SetActive(false);
         uiEndPanel.gameObject.SetActive(false);
 
@@ -143,6 +145,20 @@ public class LevelManager : MonoBehaviour
         uiHud.UpdateHealth(currHealth, totalHealth);
     }
 
+
+    public void ShowMessage(string msg)
+    {
+        uiMsgCanvas.gameObject.SetActive(msg != "");
+        txtMsg.text = msg; // FUTURE: do it line by line
+    }
+
+
+    public void FlashMessage(string msg)
+    {
+        StartCoroutine(__FlashMessage(msg));
+    }
+
+
     #endregion
 
 
@@ -168,12 +184,6 @@ public class LevelManager : MonoBehaviour
         return tilePrefabs[Random.Range(0, tilePrefabs.Length)];
     }
 
-
-    private void ShowMessage(string msg)
-    {
-        txtMsg.text = msg; // FUTURE: do it line by line
-    }
-
     #endregion
 
 
@@ -181,13 +191,17 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
+        //* DEBUG: Fast version
+        yield return __EndHumanPhase();
+        yield break;
+        // */
+
         yield return new WaitForSeconds(3f);
-        uiMsgCanvas.gameObject.SetActive(true);
-        ShowMessage("Warning, global warming has just reached 4 degrees.");
+        ShowMessage("WARNING! Global warming has just reached 4 degrees.");
         yield return new WaitForSeconds(5f);
-        ShowMessage("The Earth core has become fatally unstable...");
+        ShowMessage("The Earth core has become irreversible unstable...");
         yield return new WaitForSeconds(5f);
-        ShowMessage("... and the planet will explode in...");
+        ShowMessage("... and unfortunately the planet will explode in...");
         yield return new WaitForSeconds(5f);
         for (int i = secondsToEndOfHumanity; i >= 0; i--)
         {
@@ -202,7 +216,7 @@ public class LevelManager : MonoBehaviour
     private IEnumerator __EndHumanPhase()
     {
         // Place first tile
-        Vector3 tilePosition = player.transform.position + Vector3.up * 10f + Vector3.forward * 5f; // FUTURE: this offset shouldn't be magic numbers
+        Vector3 tilePosition = player.transform.position + Vector3.up * 49f + Vector3.forward * 8f; // FUTURE: this offset shouldn't be magic numbers
         Instantiate(GetRandomTilePrefab(), tilePosition, Quaternion.identity);
         Instantiate(GetRandomTilePrefab(), tilePosition + Vector3.forward * tileLength, Quaternion.identity);
 
@@ -212,16 +226,58 @@ public class LevelManager : MonoBehaviour
         ghost.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(3f);
+        ShowMessage("");
 
-        // Transition camera
+        // Travelling camera
         ghost.State = Ghost.GhostState.Transitioning;
         vcamHuman.gameObject.SetActive(false);
+        vcamTraveling.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+        ShowMessage("Wait, what? What the @#€∞$???");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("What happened there? I didn't get a chance at all!");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("What kind of stupid game is this!?!");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("Sigh... so I guess I'm dead, and it's time to rest...");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("... or is it?");
+
+        // Ghost camera
+        vcamTraveling.gameObject.SetActive(false);
         vcamGhost.gameObject.SetActive(true);
-        yield return new WaitForSeconds(4f); // FUTURE: this is the length of the vcam transitions
+        yield return new WaitForSeconds(4f);
+        ShowMessage("");
+        ghost.GetComponentInChildren<Light>().gameObject.SetActive(false);
 
         // Start Ghost phase
         uiHud.gameObject.SetActive(true); // FUTURE: fade in
         ghost.State = Ghost.GhostState.Playing;
+
+        yield return new WaitForSeconds(8f);
+        ShowMessage("This is frustrating, I was really looking forward to baking some muffins");
+        yield return new WaitForSeconds(5f);
+        ShowMessage("");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("But apparently I now have to kill all these weird thingies instead");
+        yield return new WaitForSeconds(5f);
+        ShowMessage("");
+        yield return new WaitForSeconds(4f);
+        ShowMessage("Which sucks, because they're kind of cute.");
+        yield return new WaitForSeconds(5f);
+        ShowMessage("");
+    }
+
+
+    private IEnumerator __FlashMessage(string msg)
+    {
+        if (txtMsg.text == "")
+        {
+            ShowMessage(msg);
+            yield return new WaitForSeconds(4f);
+            ShowMessage("");
+        }
     }
 
     #endregion

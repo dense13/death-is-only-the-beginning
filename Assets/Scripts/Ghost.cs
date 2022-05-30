@@ -87,16 +87,19 @@ public class Ghost : MonoBehaviour, IDamageable
 
     public bool UpgradeSpeed()
     {
-        return ghostController.UpgradeSpeed();
+        bool ret = ghostController.UpgradeSpeed();
+        if (ret) LevelManager.I.FlashMessage("I feel lighter (is that possible?) and faster");
+        return ret;
     }
 
 
     public bool UpgradeShootingSpeed()
     {
         // Returns false if time has reach a low threshold
-        if (timeBetweenShots <= 0.1f) return false;
+        if (timeBetweenShots <= 0.2f) return false;
 
         timeBetweenShots -= 0.1f;
+        LevelManager.I.FlashMessage("Faster shooting, double the fun!");
         return true;
     }
 
@@ -107,13 +110,17 @@ public class Ghost : MonoBehaviour, IDamageable
         if (numShots == 5) return false;
         
         numShots++;
+        LevelManager.I.FlashMessage("Now we're talking, extra fire power!");
         return true;
     }
 
 
     public bool Heal()
     {
-        return health.Heal(1f);
+        bool ret = health.Heal(1f);
+        if (ret) LevelManager.I.FlashMessage("Nice health boost, I needed that!");
+        return ret;
+
     }
 
 
@@ -122,6 +129,9 @@ public class Ghost : MonoBehaviour, IDamageable
         if (isInvulnerable) return;
 
         health.TakeDamage(damage);
+        float healthRatio = health.GetRatio();
+        if (healthRatio <= 0.3) LevelManager.I.FlashMessage("Oh oh, this is really looking grim");
+        else if (healthRatio <= 0.5) LevelManager.I.FlashMessage("Ouch, that hurt! Not feeling so well...");
     }
 
 
@@ -134,19 +144,19 @@ public class Ghost : MonoBehaviour, IDamageable
         {
             enemy.Die();
         }
+        LevelManager.I.FlashMessage("Ha ha! Blown away!");
     }
 
 
     public void StartInvulnerability()
     {
-        Debug.Log("START INVULNERABILITY");
-
         isInvulnerable = true;
         isEndingInvulnerability = false;
         remainingInvulnerability = invulnerabilityDuration;
         modelGO.SetActive(false);
         modelInvulnerableGO.SetActive(true);
         transform.localScale = Vector3.one * invulnerabilitySize; // FUTURE: tween (and back at the end of invulnerability)
+        LevelManager.I.FlashMessage("Yeah! Nothing can hurt me now! Get ready you creeps!");
     }
 
     #endregion

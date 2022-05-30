@@ -1726,8 +1726,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229741160552977794}
-  m_LocalRotation: {x: 0.3372257, y: 0.16013484, z: -0.058325276, w: 0.9258693}
-  m_LocalPosition: {x: -8.13, y: 25.63, z: -22.8}
+  m_LocalRotation: {x: 0.24914497, y: 0.16675909, z: -0.043596, w: 0.95300454}
+  m_LocalPosition: {x: 31.71711, y: 14.689514, z: -24.94309}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1759,7 +1759,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 28.77
+  field of view: 27
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1906,6 +1906,7 @@ MonoBehaviour:
   stageLength: 20
   secondsToEndOfHumanity: 10
   vcamHuman: {fileID: 703475959}
+  vcamTraveling: {fileID: 0}
   vcamGhost: {fileID: 175008503}
   tilePrefabs:
   - {fileID: 7898136204909109780, guid: 0fb5c604a42ce40fda8eb69f08ad78a2, type: 3}
@@ -2269,10 +2270,10 @@ RectTransform:
   m_Father: {fileID: 6312422157325548224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -46.73224}
-  m_SizeDelta: {x: -40, y: 53.6837}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 41}
+  m_SizeDelta: {x: -24, y: 53.6837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &841114877466482405
 CanvasRenderer:
