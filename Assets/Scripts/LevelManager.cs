@@ -122,10 +122,12 @@ public class LevelManager : MonoBehaviour
 
     public void EndGhostPhase()
     {
+        Debug.Log($"End GhostPhase, score is {score}, top is {GameManager.I.TopScore}");
         if (score > GameManager.I.TopScore)
         {
             GameManager.I.TopScore = score;
             uiEndPanel.ShowNewTopScore(); 
+            Debug.Log("I've saved it, and should show the msg in panel");
         }
         uiEndPanel.gameObject.SetActive(true);
     }
@@ -191,7 +193,7 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
-        /* DEBUG: Fast version
+        //* DEBUG: Fast version
         yield return __EndHumanPhase();
         yield break;
         // */

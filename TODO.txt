@@ -1,17 +1,10 @@
 [NOW]
 
-- BUG: hi score has stopped working
-
-
-
-[SOON]
-
 - Create powerup boxes
 
 
 
-
-[DRESS-IT-UP]
+[SOON]
 
 - Add some background music
 
