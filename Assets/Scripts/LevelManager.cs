@@ -65,7 +65,6 @@ public class LevelManager : MonoBehaviour
         uiHud.gameObject.SetActive(false);
 
         ghostHealth.OnHealthChange += ProcessOnHealthChange;
-        Cursor.lockState = CursorLockMode.Locked;
         
         player.gameObject.SetActive(true);
         ghost.gameObject.SetActive(false);

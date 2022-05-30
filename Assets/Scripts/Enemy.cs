@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour, IDamageable
             
             Destroy(shot.gameObject);
 
-            float damage = (LevelManager.I.Stage <= 10) ? shot.Damage : shot.Damage * (10f / (float)LevelManager.I.Stage);
+            float damage = (LevelManager.I.Stage <= 7) ? shot.Damage : shot.Damage * (7f / (float)LevelManager.I.Stage);
             //Debug.Log($"Damage at Stage {LevelManager.I.Stage} is {damage}");
             health.TakeDamage(damage);
             

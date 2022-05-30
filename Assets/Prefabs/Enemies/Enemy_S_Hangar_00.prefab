@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 6371374876245155255, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
       propertyPath: initialHealth
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6467217667427517323, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0897465a97af443788089a02fb845445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenShots: 5
+  timeBetweenShots: 4
   shotPrefab: {fileID: 560003241153046105, guid: 1c2fc850f304c483a9c4b5cf9ad44cdd,
     type: 3}
   shootingPositionsContainer: {fileID: 2504875641363596404}

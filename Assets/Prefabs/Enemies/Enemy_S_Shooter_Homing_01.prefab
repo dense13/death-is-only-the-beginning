@@ -545,7 +545,7 @@ PrefabInstance:
     - target: {fileID: 6371374876245155255, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
       propertyPath: initialHealth
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6467217667427517323, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
@@ -599,6 +599,22 @@ MonoBehaviour:
   shotPrefab: {fileID: 6023868530603265048, guid: ba65597a88a514abc9bec5f2286d00e5,
     type: 3}
   shootingPositionsContainer: {fileID: 8284049755195348756}
+--- !u!114 &2459612218483008021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560003241153046105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0897465a97af443788089a02fb845445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenShots: 5
+  shotPrefab: {fileID: 6023868530603265048, guid: ba65597a88a514abc9bec5f2286d00e5,
+    type: 3}
+  shootingPositionsContainer: {fileID: 3117794220156840580}
 --- !u!114 &4235716025226419500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,22 +644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!114 &2459612218483008021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560003241153046105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0897465a97af443788089a02fb845445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeBetweenShots: 5
-  shotPrefab: {fileID: 6023868530603265048, guid: ba65597a88a514abc9bec5f2286d00e5,
-    type: 3}
-  shootingPositionsContainer: {fileID: 3117794220156840580}
 --- !u!4 &6068327525100316642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 734839306376380976, guid: 5667c6c63011947f4942142586548fe9,
