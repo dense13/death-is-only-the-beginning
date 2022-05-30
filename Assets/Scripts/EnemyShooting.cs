@@ -44,6 +44,7 @@ public class EnemyShooting : MonoBehaviour
         {
             Instantiate(shotPrefab, shootingPositionTr.position, shootingPositionTr.rotation);            
         }
+        GameManager.I.PlaySfx("ENEMY_SHOT");
     }
 
     #endregion

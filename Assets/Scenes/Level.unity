@@ -5058,7 +5058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703475960, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3372257
+      value: 0.33722568
       objectReference: {fileID: 0}
     - target: {fileID: 703475960, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5096,7 +5096,7 @@ PrefabInstance:
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3372257
+      value: 0.33722568
       objectReference: {fileID: 0}
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
@@ -13101,6 +13101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 42982149023898158, guid: 192e5f15b69aa4b959b29194766d547c,
+        type: 3}
+      propertyPath: fadeoutSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 42982149023898159, guid: 192e5f15b69aa4b959b29194766d547c,
         type: 3}

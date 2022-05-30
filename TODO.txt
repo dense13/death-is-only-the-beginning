@@ -1,30 +1,21 @@
 [NOW]
 
-- Add some background music
+- Enemy hurt SFX
+- Enemy explosion SFX
+- Powerup/box pickup SFX
+- Ghost hurt SFX
+- Ghost death SFX
 
 
 
 [SOON]
 
 
-- Shot SFX
-- Enemy explosions
-- Enemy hurt SFX
-- Enemy explosion SFX
-
-- Ghost hurt SFX
-- Ghost death VFX
-- Ghost death SFX
-
-- Powerup pickup VFX
-- Powerup pickup SFX
-
-- Box pickup VFX
-- Box pickup SFX
-
 - EndHumanPhase mega explosion
 
 - Add final Waves / Sets
+
+- Enemy hurt VFX
 
 
 

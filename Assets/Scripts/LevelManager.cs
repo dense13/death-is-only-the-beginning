@@ -74,7 +74,6 @@ public class LevelManager : MonoBehaviour
         vcamGhost.gameObject.SetActive(false);
         uiEndPanel.gameObject.SetActive(false);
 
-
         StartCoroutine(__StartCountdown());
     }
 
@@ -191,11 +190,12 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator __StartCountdown()
     {
-        /* DEBUG: Fast version
+        //* DEBUG: Fast version
         yield return __EndHumanPhase();
         yield break;
         // */
 
+        StartCoroutine(GameManager.I.PlayMusic("ALARM"));
         yield return new WaitForSeconds(3f);
         ShowMessage("WARNING! Global warming has just reached 4 degrees.");
         yield return new WaitForSeconds(5f);
@@ -225,6 +225,7 @@ public class LevelManager : MonoBehaviour
         ghostCarrierTr.position = player.transform.position + Vector3.back * ghost.transform.position.z;
         ghost.gameObject.SetActive(true);
 
+        StartCoroutine(GameManager.I.PlayMusic("TRANSITION"));
         yield return new WaitForSeconds(3f);
         ShowMessage("");
 
@@ -251,6 +252,7 @@ public class LevelManager : MonoBehaviour
         vcamGhost.gameObject.SetActive(true);
         yield return new WaitForSeconds(4f);
         ShowMessage("");
+        StartCoroutine(GameManager.I.PlayMusic("GHOST"));
         ghost.GetComponentInChildren<Light>().gameObject.SetActive(false);
 
         // Start Ghost phase

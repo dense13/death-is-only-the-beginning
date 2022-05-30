@@ -202,6 +202,7 @@ public class Ghost : MonoBehaviour, IDamageable
                 Instantiate(shotPrefab, shotPosition.position, Quaternion.Euler(rotation));
             }
         }
+        GameManager.I.PlaySfx("GHOST_SHOT");
     }
 
 
