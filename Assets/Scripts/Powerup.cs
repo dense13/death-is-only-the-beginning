@@ -54,6 +54,7 @@ public class Powerup : MonoBehaviour
             }
             hasBeenUsed = true;
             Instantiate(vfxExplosion, transform.position, Quaternion.identity);
+            GameManager.I.PlaySfx("POWERUP");
             Destroy(gameObject);
         }
     }
@@ -66,6 +67,8 @@ public class Powerup : MonoBehaviour
     private void UnusablePowerup()
     {
         LevelManager.I.AddScore(SCORE_FOR_UNUSABLE_POWERUP); // FUTURE: show some visual and/or aural feed back
+        //FUTURE GameManager.I.PlaySfx("UNUSABLE_POWERUP");
+
     }
     #endregion
 

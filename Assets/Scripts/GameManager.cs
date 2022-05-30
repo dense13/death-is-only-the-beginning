@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource audioSourceSfx;
     [SerializeField] private AudioClip sfxGhostShot;
     [SerializeField] private AudioClip sfxEnemyShot;
+    [SerializeField] private AudioClip sfxPowerup;
 
 
     // Properties
-    public int TopScore = 0;
+    [HideInInspector] public int TopScore = 0;
 
 
     // Private
@@ -49,16 +50,14 @@ public class GameManager : MonoBehaviour
 
     // FUTURE: the audio system is pretty crappy, last minute job
 
-    public void PlaySfx(string id) // FUTURE: this shouldn't be a string, but I'm running out of time!!
+    public void PlaySfx(string id, float volumeFactor = 1f) // FUTURE: this shouldn't be a string, but I'm running out of time!!
     {
-        if (id == "GHOST_SHOT")
-        {
-            audioSourceSfx.PlayOneShot(sfxGhostShot);
-        }
-        else if (id == "ENEMY_SHOT")
-        {
-            audioSourceSfx.PlayOneShot(sfxEnemyShot);
-        }
+        audioSourceSfx.volume = Random.Range(0.9f, 1.0f) * volumeFactor;
+        audioSourceSfx.pitch = Random.Range(0.9f, 1.1f);
+        if (id == "GHOST_SHOT") audioSourceSfx.PlayOneShot(sfxGhostShot, 0.6f);
+        else if (id == "ENEMY_SHOT") audioSourceSfx.PlayOneShot(sfxEnemyShot, 0.4f);
+        else if (id == "POWERUP") audioSourceSfx.PlayOneShot(sfxPowerup, 1f);
+        else Debug.LogError("Unrecognized SFX: " + id);
     }
 
 

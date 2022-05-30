@@ -43,7 +43,8 @@ AudioSource:
   m_GameObject: {fileID: 42982149023898153}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1223772727551587144, guid: 2edbdba05ad554ec393551ef75b25022,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -149,6 +150,7 @@ MonoBehaviour:
   audioSourceSfx: {fileID: 7731470697347824203}
   sfxGhostShot: {fileID: 8300000, guid: 1c7b40a54c53344abb8dd82c9f9cbab5, type: 3}
   sfxEnemyShot: {fileID: 8300000, guid: 5775aa12f53b643d692154557306d203, type: 3}
+  sfxPowerup: {fileID: 8300000, guid: 912ac768bd4f24d68a80d84e9e9b5fd3, type: 3}
   TopScore: 0
 --- !u!1 &4304797926595827699
 GameObject:
@@ -191,7 +193,8 @@ AudioSource:
   m_GameObject: {fileID: 4304797926595827699}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3481727923725769273, guid: 2edbdba05ad554ec393551ef75b25022,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

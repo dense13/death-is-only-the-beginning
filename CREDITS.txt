@@ -12,6 +12,8 @@ SFX
 Alarm - https://freesound.org/people/sonically_sound/sounds/607880/
 Ghost shot - https://freesound.org/people/nsstudios/sounds/344276/
 Enemy shot - https://freesound.org/people/MATRIXXX_/sounds/413057/
+Glass breaking - https://freesound.org/people/unfa/sounds/221528/
+Explosions - https://freesound.org/people/edwardszakal/sounds/592752/
 
 
 VFX

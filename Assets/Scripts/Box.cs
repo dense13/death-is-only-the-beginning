@@ -16,6 +16,7 @@ public class Box : MonoBehaviour
         {
             player.PickupBox(powerupType);
             Instantiate(vfxExplosion, transform.position, Quaternion.identity);
+            GameManager.I.PlaySfx("POWERUP", 0.3f);
             Destroy(gameObject);
         }
     }
