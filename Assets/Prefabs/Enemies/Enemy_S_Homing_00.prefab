@@ -142,6 +142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8644160828058736279, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
+      propertyPath: scoreValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644160828058736279, guid: 5667c6c63011947f4942142586548fe9,
+        type: 3}
       propertyPath: collisionDamage
       value: 2
       objectReference: {fileID: 0}

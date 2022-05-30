@@ -4,7 +4,7 @@ public class WaveSpawner : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] private PrefabCollection[] waveSets;
-    [SerializeField] private float initialTimeBetweenSpawns = 6f;
+    [SerializeField] private float initialTimeBetweenSpawns = 10f;
 
 
     // Private

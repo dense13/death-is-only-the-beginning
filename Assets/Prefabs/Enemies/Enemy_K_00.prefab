@@ -139,7 +139,12 @@ PrefabInstance:
     - target: {fileID: 6467217667427517323, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Kamikaze_00
+      value: Enemy_K_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644160828058736279, guid: 5667c6c63011947f4942142586548fe9,
+        type: 3}
+      propertyPath: scoreValue
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8644160828058736279, guid: 5667c6c63011947f4942142586548fe9,
         type: 3}
@@ -181,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalSpeed: 2
   horizontalSpeed: 2
+  movementDelay: 1
 --- !u!4 &6068327525100316642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 734839306376380976, guid: 5667c6c63011947f4942142586548fe9,
