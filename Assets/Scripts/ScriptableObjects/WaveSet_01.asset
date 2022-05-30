@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WaveSet_01
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 4881468198836129551, guid: b433c3d31482147d29426a98352b8d62, type: 3}
-  - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
   - {fileID: 4881468198836129551, guid: 23730ee24145d4d46b51007310d163ed, type: 3}
-  - {fileID: 4881468198836129551, guid: 7cce730faa93a456380b5129ddcc08b1, type: 3}
+  - {fileID: 4881468198836129551, guid: f8c2ceb1621f14022aac79ba0c2dbf13, type: 3}
+  - {fileID: 4881468198836129551, guid: b433c3d31482147d29426a98352b8d62, type: 3}
+  - {fileID: 4881468198836129551, guid: 31f2e8afc3b804248828cdbd9f2bb086, type: 3}

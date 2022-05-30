@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 127ca848f06444fa9b8f68fd0551ea6a, type: 3}
-  m_Name: WaveSet_00
+  m_Name: WaveSet_05
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 4881468198836129551, guid: 7cce730faa93a456380b5129ddcc08b1, type: 3}
-  - {fileID: 4881468198836129551, guid: 82ee47843c986449dadf82b45b2dfd64, type: 3}
-  - {fileID: 4881468198836129551, guid: d6469f360235b42088aa4d6b90d32b87, type: 3}
-  - {fileID: 4881468198836129551, guid: 7331339e8ade546cb8fa754ff0548efd, type: 3}
+  - {fileID: 4881468198836129551, guid: 2025d4fc5b7af4e40bfd09bb9e984602, type: 3}
+  - {fileID: 4881468198836129551, guid: 8f69408533da74d2f8c353aa7c97f2ab, type: 3}
+  - {fileID: 4881468198836129551, guid: b13e08f5b5c164347a23201b74b5c6cd, type: 3}
+  - {fileID: 4881468198836129551, guid: dbe8b91ce1e654a5dab9b9bfc6eba740, type: 3}

@@ -1,7 +1,5 @@
 [NOW]
 
-- Add final Waves / Sets
-
 
 
 [SOON]
@@ -17,8 +15,6 @@
 - Make cover image
 - Take screenshots
 - Write page content
-- Publish in itch.io
-- Submit to Jam
 -----
 - Write/Publish post in dense13.com
 - Write/Publish long (LinkedIn)
