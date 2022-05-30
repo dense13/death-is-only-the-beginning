@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDamage: 5
   scoreValue: 1
+  vfxExplosion: {fileID: 1076544425457449389, guid: b0de21565eda24f3daec49cdb5983440,
+    type: 3}
 --- !u!114 &6371374876245155255
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,10 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float collisionDamage = 5f;
     [SerializeField] private int scoreValue = 1;
 
+
+    [Header("Setup")]
+    [SerializeField] private GameObject vfxExplosion;
+
     // Private
     private bool isDead = false;
     private Health health;
@@ -46,9 +50,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        // TODO: explode instead of just destroying
         isDead = true;
         LevelManager.I.AddScore(scoreValue);
+        Instantiate(vfxExplosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
         // TODO: explode instead of just destroying
     }

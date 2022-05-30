@@ -236,7 +236,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         ShowMessage("Wait, what? What the @#€∞$???");
         yield return new WaitForSeconds(4f);
-        ShowMessage("What happened there? I didn't get a chance at all!");
+        ShowMessage("What happened there? I didn't stand a chance at all!");
         yield return new WaitForSeconds(4f);
         ShowMessage("What kind of stupid game is this!?!");
         yield return new WaitForSeconds(4f);
