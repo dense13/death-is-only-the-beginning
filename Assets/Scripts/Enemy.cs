@@ -39,7 +39,11 @@ public class Enemy : MonoBehaviour, IDamageable
             if (shot.IsEnemyShot) return;
             
             Destroy(shot.gameObject);
-            health.TakeDamage(shot.Damage);
+
+            float damage = (LevelManager.I.Stage <= 10) ? shot.Damage : shot.Damage * (10f / (float)LevelManager.I.Stage);
+            Debug.Log($"Damage at Stage {LevelManager.I.Stage} is {damage}");
+            health.TakeDamage(damage);
+            
             if (health.GetRatio() > 0) GameManager.I.PlaySfx("ENEMY_HURT");
         }
     }

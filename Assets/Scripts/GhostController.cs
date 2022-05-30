@@ -22,7 +22,7 @@ public class GhostController : MonoBehaviour
 
     private void Update()
     {
-        if (ghost.State != Ghost.GhostState.Playing) return;
+        if (ghost.State != GhostState.Playing) return;
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");

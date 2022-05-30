@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5dbae5f4cd04b20a4fee228495fa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageLength: 20
+  stageLength: 30
   secondsToEndOfHumanity: 10
   vcamHuman: {fileID: 703475959}
   vcamTraveling: {fileID: 0}

@@ -5,7 +5,7 @@ public class PowerupSpawner : MonoBehaviour
 {    
     [Header("Setup")]
     [SerializeField][Tooltip("HACK! Must be in the order of the enum!")] private GameObject[] allPrefabs;
-    [SerializeField] private float timeBetweenSpawns = 10f;
+    [SerializeField] private float timeBetweenSpawns = 20f;
 
 
     // Private

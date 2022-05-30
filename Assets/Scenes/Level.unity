@@ -3520,7 +3520,7 @@ MonoBehaviour:
   - {fileID: 7589013046955373853, guid: 81ed1cb363e7642c185f92225ebc66d1, type: 3}
   - {fileID: 7589013046955373853, guid: 09fb7dc0937a4432b8086e2a26b59c39, type: 3}
   - {fileID: 7589013046955373853, guid: 078c4bd5ab0d84f208b3eb5977f840cf, type: 3}
-  timeBetweenSpawns: 10
+  timeBetweenSpawns: 20
 --- !u!4 &633575232
 Transform:
   m_ObjectHideFlags: 0
@@ -5058,7 +5058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703475960, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33722568
+      value: 0.3372257
       objectReference: {fileID: 0}
     - target: {fileID: 703475960, guid: 85c85be23c3654a138e1c184359d2914, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5096,7 +5096,7 @@ PrefabInstance:
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.33722568
+      value: 0.3372257
       objectReference: {fileID: 0}
     - target: {fileID: 229741160552977807, guid: 85c85be23c3654a138e1c184359d2914,
         type: 3}

@@ -33,9 +33,9 @@ public class GhostCarrierController : MonoBehaviour
 
     private void Update()
     {
-        if (ghost.State == Ghost.GhostState.Off) return;
+        if (ghost.State == GhostState.Off) return;
 
-        if (ghost.State == Ghost.GhostState.Transitioning)
+        if (ghost.State == GhostState.Transitioning)
         {
             if (!isAscensionPointSet)
             {

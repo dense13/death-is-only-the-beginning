@@ -1,12 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
+public enum GhostState { Off, Transitioning, Playing, Dead }
+
+
 public class Ghost : MonoBehaviour, IDamageable
 {
-    // Enums
-    public enum GhostState { Off, Transitioning, Playing, Dead }
-
-
     // Properties
     public GhostState State { get; set; } // FUTURE: accessibility
 

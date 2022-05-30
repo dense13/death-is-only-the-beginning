@@ -43,7 +43,6 @@ public class LevelManager : MonoBehaviour
     private int stage = 0;
     private float timeToNextStage;
     private HashSet<PowerupType> availablePowerups = new HashSet<PowerupType>();
-    private bool isInHumanPhase = true;
 
 
     #region Monobehaviour
@@ -81,10 +80,8 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (isInHumanPhase) return;
-
         // If Ghost is playing
-        if (ghost.State == Ghost.GhostState.Playing)
+        if (ghost.State == GhostState.Playing)
         {
             if (timeToNextStage <= 0)
             {
@@ -133,7 +130,7 @@ public class LevelManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        if (ghost.State != Ghost.GhostState.Playing) return;
+        if (ghost.State != GhostState.Playing) return;
 
         score += amount;
         uiHud.UpdateScore(score);
@@ -234,7 +231,7 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(GameManager.I.PlayMusic("TRANSITION"));
 
         // Travelling camera
-        ghost.State = Ghost.GhostState.Transitioning;
+        ghost.State = GhostState.Transitioning;
         vcamHuman.gameObject.SetActive(false);
         vcamTraveling.gameObject.SetActive(true);
 
@@ -261,7 +258,7 @@ public class LevelManager : MonoBehaviour
 
         // Start Ghost phase
         uiHud.gameObject.SetActive(true); // FUTURE: fade in
-        ghost.State = Ghost.GhostState.Playing;
+        ghost.State = GhostState.Playing;
 
         yield return new WaitForSeconds(8f);
         ShowMessage("This is frustrating, I was really looking forward to baking some muffins");

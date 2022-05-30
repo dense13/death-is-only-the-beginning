@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void Awake()
     {
-        timeToNextSpawn = initialTimeBetweenSpawns;
+        timeToNextSpawn = 0; // spawn a wave straight away
     }
 
 
