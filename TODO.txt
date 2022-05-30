@@ -1,12 +1,12 @@
 [NOW]
 
-- Create powerup boxes
+- BUG: When the ghost grows in size, it should do it with the model, or the shots go off-plane
+- Add some background music
 
 
 
 [SOON]
 
-- Add some background music
 
 - Shot SFX
 - Enemy explosions
