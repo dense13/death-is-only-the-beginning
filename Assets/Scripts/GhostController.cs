@@ -24,8 +24,8 @@ public class GhostController : MonoBehaviour
     {
         if (ghost.State != GhostState.Playing) return;
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
 
         Vector3 destination = transform.localPosition + new Vector3(horizontalInput, 0, verticalInput);
         if (destination.x < -8.5) destination.x = -8.5f;
